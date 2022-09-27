@@ -170,5 +170,25 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
      Next time we will see the following theorem:\\
      \textbf{Theorem(Kucera,Gacs)}: Every set is (wtt) reducible to a $ML$ random sequence.\\
      Recall: A wtt reduction is just a Turing reduction with a computable bound on the use.
+     \newpage
+     \section{Lecture 9}
+     \textbf{Def}: A supermartingale $S$ strongly succeeds on $X\in 2^\omega$ if $lim S(X|_n) = \infty$. \\
+     A $c.e.$ supermartingale is strongly universal if it strongly succeeds on every non $ML$ random.\\
+     \textbf{Fact:} $M(\sigma) = \sum_{\tau \in 2^{<\omega}} 2^{K(\tau)} B_\tau(\sigma)$. is strongly universal.\\
+     Proof: Let $X$ be non ML random. Fix $k$ and take $\tau \prec X$ such that $K(\tau)\leq |\tau| - k$. Then for any $n\geq |\tau|, M(X|_n) \geq 2^{-K(\tau)} B_\tau(X|_n) = 2^{-K(\tau)} 2^{|\tau|} \geq 2^k $. Since $k$ was arbitrary $M$ wins along $X$.
+     \textbf{Corollary}: An optimal c.e. supermartingale is strongly universal.
+     \\
+     \textbf{Theorem : (Kucera, Gacs)} Every set is $(wtt)$ reducible to $ML$ random sequence.\\
+     \textbf{Lemma:} Given $\delta > 1$ and $k\in \omega$ we can compute a length $l= l(\delta,k)$ such that for any supermartingale $S$ and any $\sigma$, $|\{\tau \in 2^l: S(\sigma \tau) \leq \delta S(\sigma)\}| \geq k$.\\
+     Proof: Let $T = $ set of bad strings of length $l$. By Kolmogrov's inequality : $\sum_{\tau \in T} 2^{-|\tau|}S(\sigma \tau) \leq S(\tau)$. The left hand side is $\geq |T| 2^{-|\tau|}\delta S(\sigma)$. So $|T| \leq 2^l/\delta$. To find the $l$, pick $l$ such that $2^l - |T| \geq (1-1/\delta)@^l \geq k$. We get $l \geq log_2 k + log_2 \delta - log_2(\delta -1)$.\\
+     Proof of theorem: Fix a strongly universal $c.e.$ supermartingale $S$ with $S(\lambda) \leq 1$. Fix a computable sequence of rationals $\{\delta_s\}_{s \in \omega}$ such that $\delta_s > 1$ and $\prod \delta_s \leq 2$.\\
+     Let $l_s = l(\delta_s , 2)$ for each $s$. Fix $X$. We build a sequence $A$ that is $ML$ random and $X \leq_{wtt} A$. The use $u(t) = \sum_{s\leq t} l_s$.\\
+     Say we have built $\sigma = A|u(t-1)$ and $S(\sigma) \leq \prod_{s<t} \delta_s$. There are at least $2$ strings $\tau \in 2^{l_s}$ such that $S(\sigma \tau) \leq \prod_{s\leq t} \delta_s$. Let $\tau_0$ be the left most and $\tau_1$ the rightmost. Define $A|_{\mu(t)} = \sigma \tau_i$ where $i  = X(t)$. Note, we can decode $X$ from $A$! This reduction is uniform too!\\
+     Note: $A\geq_T 0' \oplus X$.\\
+     \textbf{Corollary} : Every Turing degree above $0'$ contains a $ML$ random.\\
+     \subsection{A little measure theory}
+     \textbf{Definition}: Let $\mu$ be a measure. If $C \subset 2^\omega$ is a $\mu$ measurable and $\sigma$ is a string satisfying $\mu[\sigma] \neq 0$, let $\mu(C|\sigma) = \mu(C \cap [\sigma])/\mu([\sigma])$.\\
+     \textbf{Theorem}: If $\mu(C)>0$ then $\forall \delta < 1 \exists \sigma \in 2^{<\omega}$ such that $\mu(C|\sigma)\geq \delta$ (Weak form of Lebesgue density)\\
+     Proof: Let $\epsilon = (1/\delta -1)\mu(C)$. There is an open set $A \supset C$, (assuming $\mu$ is regular) such that $\mu(A) - \mu(C) \leq \epsilon$. So $\delta \mu(A) \leq \mu(C)$. Let $D$ be prefix free such that $A = [D]$. If no $\sigma \in D$ satisfies $\mu(C|\sigma) \geq \delta$, then $\mu(C) = \sum_{\sigma \in D} \mu(C \cap [\sigma]) < \delta \sum_{\sigma \in D} \mu([\sigma]) = \delta \mu(A) \leq \mu(C)$. But then $\mu(C) < \mu(C)$, a contradiction. 
      
 \end{document}
