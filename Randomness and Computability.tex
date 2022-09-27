@@ -12,6 +12,8 @@
 
 \begin{document}
 	\maketitle
+	\tableofcontents
+	\newpage
 	\section{Lecture 1}
 	The main notions are Kolmogorav complexity and Martin Lof Randomness.\\
 	\textbf{Kolmogorov complexity}: This measures the information content or complexity of a finite binary string. $C(\sigma)$ is the legnth of the shortest binary description of $\sigma$. \\
@@ -175,7 +177,7 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
      \textbf{Def}: A supermartingale $S$ strongly succeeds on $X\in 2^\omega$ if $lim S(X|_n) = \infty$. \\
      A $c.e.$ supermartingale is strongly universal if it strongly succeeds on every non $ML$ random.\\
      \textbf{Fact:} $M(\sigma) = \sum_{\tau \in 2^{<\omega}} 2^{K(\tau)} B_\tau(\sigma)$. is strongly universal.\\
-     Proof: Let $X$ be non ML random. Fix $k$ and take $\tau \prec X$ such that $K(\tau)\leq |\tau| - k$. Then for any $n\geq |\tau|, M(X|_n) \geq 2^{-K(\tau)} B_\tau(X|_n) = 2^{-K(\tau)} 2^{|\tau|} \geq 2^k $. Since $k$ was arbitrary $M$ wins along $X$.
+     Proof: Let $X$ be non ML random. Fix $k$ and take $\tau \prec X$ such that $K(\tau)\leq |\tau| - k$. Then for any $n\geq |\tau|, M(X|_n) \geq 2^{-K(\tau)} B_\tau(X|_n) = 2^{-K(\tau)} 2^{|\tau|} \geq 2^k $. Since $k$ was arbitrary $M$ wins along $X$.\\
      \textbf{Corollary}: An optimal c.e. supermartingale is strongly universal.
      \\
      \textbf{Theorem : (Kucera, Gacs)} Every set is $(wtt)$ reducible to $ML$ random sequence.\\
@@ -189,6 +191,6 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
      \subsection{A little measure theory}
      \textbf{Definition}: Let $\mu$ be a measure. If $C \subset 2^\omega$ is a $\mu$ measurable and $\sigma$ is a string satisfying $\mu[\sigma] \neq 0$, let $\mu(C|\sigma) = \mu(C \cap [\sigma])/\mu([\sigma])$.\\
      \textbf{Theorem}: If $\mu(C)>0$ then $\forall \delta < 1 \exists \sigma \in 2^{<\omega}$ such that $\mu(C|\sigma)\geq \delta$ (Weak form of Lebesgue density)\\
-     Proof: Let $\epsilon = (1/\delta -1)\mu(C)$. There is an open set $A \supset C$, (assuming $\mu$ is regular) such that $\mu(A) - \mu(C) \leq \epsilon$. So $\delta \mu(A) \leq \mu(C)$. Let $D$ be prefix free such that $A = [D]$. If no $\sigma \in D$ satisfies $\mu(C|\sigma) \geq \delta$, then $\mu(C) = \sum_{\sigma \in D} \mu(C \cap [\sigma]) < \delta \sum_{\sigma \in D} \mu([\sigma]) = \delta \mu(A) \leq \mu(C)$. But then $\mu(C) < \mu(C)$, a contradiction. 
-     
+     Proof: Let $\epsilon = (1/\delta -1)\mu(C)$. There is an open set $A \supset C$, (assuming $\mu$ is regular) such that $\mu(A) - \mu(C) \leq \epsilon$. So $\delta \mu(A) \leq \mu(C)$. Let $D$ be prefix free such that $A = [D]$. If no $\sigma \in D$ satisfies $\mu(C|\sigma) \geq \delta$, then $\mu(C) = \sum_{\sigma \in D} \mu(C \cap [\sigma]) < \delta \sum_{\sigma \in D} \mu([\sigma]) = \delta \mu(A) \leq \mu(C)$. But then $\mu(C) < \mu(C)$, a contradiction. \newpage
+     \section{Lecture 10}
 \end{document}

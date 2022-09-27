@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  27 SEP 2022 13:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  27 SEP 2022 13:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"Randomness and Computability.tex"
-(./Randomness and Computability.tex
+**"Notes Qual Prep.tex"
+(./Notes Qual Prep.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
@@ -358,8 +358,8 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count290
 \l__pdf_internal_box=\box51
 )
-(./Randomness and Computability.aux)
-\openout1 = `"Randomness and Computability.aux"'.
+(./Notes Qual Prep.aux)
+\openout1 = `"Notes Qual Prep.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
@@ -422,9 +422,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 13.
 LaTeX Info: Redefining \pageref on input line 13.
 LaTeX Info: Redefining \nameref on input line 13.
- (./Randomness and Computability.out) (./Randomness and Computability.out)
+ (./Notes Qual Prep.out) (./Notes Qual Prep.out)
 \@outlinefile=\write4
-\openout4 = `"Randomness and Computability.out"'.
+\openout4 = `"Notes Qual Prep.out"'.
 
 \c@lstlisting=\count298
 LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
@@ -439,123 +439,208 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./Randomness and Computability.toc)
+(./Notes Qual Prep.toc)
 \tf@toc=\write5
-\openout5 = `"Randomness and Computability.toc"'.
+\openout5 = `"Notes Qual Prep.toc"'.
 
  [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 18--25
+Underfull \hbox (badness 10000) in paragraph at lines 18--39
 
  []
 
 
-Overfull \hbox (0.55615pt too wide) in paragraph at lines 18--25
-\OT1/cmr/m/n/10 Schnorr(71) char-ac-ter-ized ML-randomness in terms of cer-tain
- (semi com-putable)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--25
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 27--29
+Underfull \hbox (badness 10000) in paragraph at lines 18--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--55
+Underfull \hbox (badness 10000) in paragraph at lines 18--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--55
+Underfull \hbox (badness 10000) in paragraph at lines 18--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--55
+Underfull \hbox (badness 10000) in paragraph at lines 18--39
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 75--92
-
- []
-
-[4] [5]
-Overfull \hbox (24.35059pt too wide) in paragraph at lines 94--115
-[][] \OT1/cmr/m/n/10 2[] \OMS/cmsy/m/n/10 ^^T [][] [][] \OT1/cmr/m/n/10 2[] = [
-][] 2[] [][] 2[] = [][] 2[]\OML/cmm/m/it/10 ^^V\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
-0 V[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--115
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 117--136
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 46--62
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--136
+Underfull \hbox (badness 10000) in paragraph at lines 46--62
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--136
-
- []
-
-[7]
-Overfull \hbox (31.50415pt too wide) in paragraph at lines 138--162
-\OML/cmm/m/it/10 ii\OT1/cmr/m/n/10 )  =[]\OMS/cmsy/m/n/10 )  \OML/cmm/m/it/10 i
-ii\OT1/cmr/m/n/10 )$ - De-fine $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/i
-t/10 ^^[\OT1/cmr/m/n/10 ) = [][] 2[] + [][] 2[] = [][] 2[]\OML/cmm/m/it/10 B[]\
-OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^[\OT1/cmr/m/n/10 )$.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--175
+Underfull \hbox (badness 10000) in paragraph at lines 46--62
 
  []
 
 
-Overfull \hbox (10.00374pt too wide) in paragraph at lines 163--175
-\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 ^^\$ \OT1/cmr/m/n/10 is $\OML/cmm/m/it/10 
-^^[$ \OT1/cmr/m/n/10 back-wards, ob-vi-ously $\OML/cmm/m/it/10 K\OT1/cmr/m/n/10
- (\OML/cmm/m/it/10 ^^[\OT1/cmr/m/n/10 ) =[] \OML/cmm/m/it/10 K\OT1/cmr/m/n/10 (
-\OML/cmm/m/it/10 ^^\\OT1/cmr/m/n/10 )$ but we don't al-ways have $\OML/cmm/m/it
-/10 KM\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^[\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 6
-\OT1/cmr/m/n/10 =[]
- []
-
-[8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 177--191
+Underfull \hbox (badness 10000) in paragraph at lines 46--62
 
  []
 
-[10] 
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 64--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--109
+
+ []
+
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 111--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--157
+
+ []
+
+[7] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 159--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--164
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 166--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--186
+
+ []
+
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 188--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--214
+
+ []
+
+[13] [14] [15] 
 AED: lastpage setting LastPage
-[11] (./Randomness and Computability.aux)
-Package rerunfilecheck Info: File `"Randomness and Computability".out' has not 
-changed.
-(rerunfilecheck)             Checksum: A670EEAB8F62587AC4F852268CFB0336;1265.
+
+Overfull \hbox (6.88469pt too wide) in paragraph at lines 219--244
+\OT1/cmr/m/n/10 ii) (Can-tor nor-mal form) Any $\OML/cmm/m/it/10  \OMS/cmsy/m/
+n/10 2 \OML/cmm/m/it/10 ON$ \OT1/cmr/m/n/10 can be writ-ten uniquely as $\OML/c
+mm/m/it/10  \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 ![]:n[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--244
+
+ []
+
+[16] [17] (./Notes Qual Prep.aux)
+Package rerunfilecheck Info: File `"Notes Qual Prep".out' has not changed.
+(rerunfilecheck)             Checksum: F24335287928D159371916C82FD44682;1669.
  ) 
 Here is how much of TeX's memory you used:
- 11549 strings out of 478994
- 167654 string characters out of 5858184
- 492587 words of memory out of 5000000
- 28838 multiletter control sequences out of 15000+600000
- 411293 words of font info for 58 fonts, out of 8000000 for 9000
+ 11548 strings out of 478994
+ 167365 string characters out of 5858184
+ 492547 words of memory out of 5000000
+ 28834 multiletter control sequences out of 15000+600000
+ 410986 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,6n,74p,951b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,6n,74p,1053b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -568,12 +653,13 @@ l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
 texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
 e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
-021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Randomness and Computability.pdf" (11 pages, 202689 bytes).
+/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/202
+1/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Notes Qual Prep.pdf" (17 pages, 221066 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 193 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
