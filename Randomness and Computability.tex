@@ -193,4 +193,31 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
      \textbf{Theorem}: If $\mu(C)>0$ then $\forall \delta < 1 \exists \sigma \in 2^{<\omega}$ such that $\mu(C|\sigma)\geq \delta$ (Weak form of Lebesgue density)\\
      Proof: Let $\epsilon = (1/\delta -1)\mu(C)$. There is an open set $A \supset C$, (assuming $\mu$ is regular) such that $\mu(A) - \mu(C) \leq \epsilon$. So $\delta \mu(A) \leq \mu(C)$. Let $D$ be prefix free such that $A = [D]$. If no $\sigma \in D$ satisfies $\mu(C|\sigma) \geq \delta$, then $\mu(C) = \sum_{\sigma \in D} \mu(C \cap [\sigma]) < \delta \sum_{\sigma \in D} \mu([\sigma]) = \delta \mu(A) \leq \mu(C)$. But then $\mu(C) < \mu(C)$, a contradiction. \newpage
      \section{Lecture 10}
+     We'll only use the weak form of Lebesgue density for Lebesgue measure $\mu$, but the proof works for regular measures (outer) and its true for any Borel measure.\\
+     Lebesgue density says if $\mu$ is a Borel measure, for any $\mu-a.e. X\in 2^\omega$, and $C$ measurable we have: 
+     $lim_{\sigma \prec X } \mu(C|\sigma) = 0 $ when $X\not \in C$ and $1$ otherwise.\\
+     \\
+     \textbf{Theorem:} $X$ is not computabe $\implies \mu\{A: A\geq_T X\} = 0$.
+     \\ Proof: Assume $\mu(\{A: A\geq_T X\})>0$. Fix an index $e$ such that $\mu\{A: \varphi_e^A = X\} >0$. Let $C = \{A: \varphi_e^A = X\}$. Take $\sigma$ such that $\mu\{A: \varphi_e^{\sigma A} = X\} > 2/3$. To compute $X(n)$ wait for either $\mu\{A: \varphi_e^{\sigma A}(n)=0\} >1/3$ or $\mu\{A: \varphi_e^A(n) = 1\} > 1/3$ whichever happens is correct.\\
+     Exercise: $i) \{X : X $ has $PA$ degree $\} = \{X: X$ computes a $0-1$ valued DNC function $\}$. (Similar to previous theorem)\\
+     $ii)$ If $X$ is $ML$ random, then $f(e) = X|_e$ can only agree with $\varphi_e(e)$ finitely often, so $\mu\{X:X $ has DNC degree$\}=1$.
+     \subsection{Relativizing $ML$ randomness}
+     A $ML$ test relative to $A$ is an $A$ computable of $\Sigma^0_1[A]$ classes $\{V_n^A\}_{n \in \omega}$ such that $\mu(V_n^A)\leq 2^{-n}$.\\
+     \textbf{Definition:} $X$ is $ML$ random relative to $A$ if $X$ passes every $A-ML$ test.
+     \\
+     Example: $X$ is $n-$ random if $X$ is $0^{n-1}$ random. So $1-$ random = $ML$ random.\\
+     We can relativize the other characterizations, and everything works.\\
+     Unsurprisingly $B\leq_T A$ and $X$ is $A-$ random $\implies X$ is $B-$ random.\\
+     The construction of a universal $A-ML$ test is uniform in $A$. So there is a universal oracle $A-ML-test$ : $\{U_n^\square\}_{n \in \omega}$ for every $A \in 2^\omega$, $\{U_n^A\}_{n\in \omega}$ is a universal $A-ML-test$.\\
+     Example: If $X$ is not computable and $Z$ is $X\oplus 0'$ random, then $Z\not \geq_T X$.\\
+     Proof: Fix $e$. Using $X \oplus 0'$ we can find a $\sigma_n \prec X$ such that $\mu\{Z: \varphi_e^Z \succ \sigma_n\} \leq 2^{-n}$. Hence $\{Z : \varphi_e^Z =X\}$ is covered by the $X \oplus 0'$ ML test above.\\
+     Fact: $X$ is $K-$ trivial ($K(X|_n) \leq^+ K(n)$) $\iff$ there is an $X$ random $Z$ such that $Z \geq_T X$. Recall all $K-$ trivials are $\Delta^0_2$.\\
+     \textbf{Van Lambalgen's Theorem:} $A \oplus B$ is $1-$ random $\iff B$ is $1-$ random and $A$ is $B-$ random.
+     \\
+     \textbf{Corollary} If $A,B \in 2^\omega$ are both $1-$ random, then $A$ is $B$ random $\iff$ $B$ is $A-$ random. \\
+     \textbf{Corollary} If $A \oplus B$ is $1-$ random then $A|_T B$. $A,B$ may not be a minimal pair but if $X \leq_T A,B$ with $A \oplus B$ $1-$ random, then $X$ is $K-$ trival. Such $X$ form a proper subclass of $K-$ trivials.\\
+     Note: If $X$ is $1-$ random and $Z$ is $X-$ random, then $Z \not \geq_T X$. \\
+     Proof: $X$ is $Z$ random by Van Lambalgen's.\\
+     $Van Lambalgen's $ theorem has analogues: Its true for $1-$ generics. Product forcing (Set theory): $(G,H) $ is generic for $\mathbb{P} \times \bb{Q}$ over $V \iff G$ is $\bb{P}$ generic over $V$ and $H$ is $\bb{Q}$ generic over $V[G]$. Fubini's theorem can also be seen as an analogue.
+     \section{Lecture 11}
 \end{document}
