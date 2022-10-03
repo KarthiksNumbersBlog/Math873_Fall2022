@@ -220,4 +220,25 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
      Proof: $X$ is $Z$ random by Van Lambalgen's.\\
      $Van Lambalgen's $ theorem has analogues: Its true for $1-$ generics. Product forcing (Set theory): $(G,H) $ is generic for $\mathbb{P} \times \bb{Q}$ over $V \iff G$ is $\bb{P}$ generic over $V$ and $H$ is $\bb{Q}$ generic over $V[G]$. Fubini's theorem can also be seen as an analogue.
      \section{Lecture 11}
+     \textbf{Van Lambalgen's Theorem:} $A \oplus B $ is $1-$ random $\iff B $ is $1-$ random and $A$ is $B-$ random.\\
+     Proof: For the forward direction let $\{U_n^\square\}_{n\in \omega} $be a universal oracle test. Let $W_n = \{\sigma\oplus\tau : |\sigma| = | \tau| and [\sigma] \subset U_n^\tau\}$. So $[W_n] = \{X\oplus Y : X \in U_n^Y\}$. Note that $\mu[W_n] = \int_Y \mu\{X \in 2^\omega: X \in U_n^Y\} dY = \int_Y \mu(U_n^Y) dY \leq \int_Y 2^{-n}dY = 2^{-n}$. Hence $\{[W_n]\}_n$ is a $ML$ test. \\
+     So $A \oplus B \not \in \cap [W_n]$ which means for some $n$ we have $A \oplus B \not \in [W_n]$. So $A$ is $B-$ random. Similarly $B$ is $A-$ random and hence $1-$ random.
+     \\
+     \textbf{Lemma} If $\{V_n\}_{n\in \omega}$ is an $ML-$ test and $X$ is $1-$ random then $X \not \in V_n$ for almost all $n$.\\
+     Proof: Let $V_n' = \cap_{m>n} V_m$ Then $\mu(V_n') \leq \sum_{m>n} 2^{-m} = 2^{-n}$ so $\{V_n' \}_{n\in \omega}$ is a $ML$ test. But $X \not \in V_n' \implies \forall m> n $ we have $X \not \in V_m$.\\
+     For the backward direction of $Van\; Lambalgen's \;theorem$:\\
+      Let $W_n = \{\tau \in 2^{<\omega}: (\forall Y \prec \tau) \mu\{X\in 2^\omega: X \oplus Y \in U_{2n}\} > 2^{-n}\}$. This set is $c.e.$ by compactness. \\Also $[W_n] = \{ Y \in 2^\omega: \mu\{X \in 2^\omega: X \oplus Y \in U_{2n}\} > 2^{-n}\}$. If $\mu([W_n]) > 2^{-n}$ then $\mu(U_{2n}) \geq \int_{Y \in [W_n]} \mu\{X \in 2^\omega: X\oplus Y \in U_{2n}\}dY \geq \int_{Y \in [W_n]} 2^{-n} dY = 2^{-n} \mu([W_n]) > 2^{-2n} $, a contradiction. So $\{[W_n]\}_{n\in \omega}$  form a ML test. Since $B$ is $1-$ random, $B \not \in [W_n]$ for almost all $n$. Thus for sufficiently large $n$ we have $\{X \in 2^\omega: X\oplus B \in U_{2n}\} \leq 2^{-n}$. let $V_n^B = \{X \in 2^\omega: X\oplus B \in U_{2n}\}$, this is a $\Sigma^0_1 $ class relative to $B$. Thus $\{V_n^B\}_n$ is eventually a $B$ ML test. So $A \not \in V_n^B$ for some $n$, and so $A\oplus B \not \in U_{2n}$ for this $n$. So $A \oplus B$ is $ML$ random.\\
+      \textbf{Theorem:} If $Y$ is $1-$ random, $X$ is $n-$ random and $Y\leq_T X$, then $Y$ is $n-$ random.
+      \\ Proof: This is an application of Van Lambalgen's theorem. Assume $n>1$. Let $Z \equiv_T 0^{n-1}$ be a $1-$ random (Kucera Gacs). So $X$ is $n-$ random $\iff X$ is $0^{n-1}$ random $\iff X$ is $Z-$ random $\iff Z$ is $X-$ random $\implies Z$ is $Y-$ random $\iff Y$ is $Z - $ random $\iff Y $ is $n-$ random.
+      \\
+      Fact: If $Y$ is $1-$ random and $X$ is $Z-$ random and $Y \leq_TX$ then $Y $ is $Z$ random for any $Z$.\\
+      Idea: Pull a $Z-ML$ test covering $Y$ up using the reductions to a $Z-$ ML test covering $X$.\\
+      \textbf{Definition:} $X$ is low for $\Omega = \sum_{\sigma \in dom U} 2^{-|\sigma|}$ (Chaitin's $\Omega$)  if $\Omega$ is $X-$ random. 
+      \\
+      Note: If $X$ is $1-$ random then $X$ is low for $\Omega \iff X $ is $\Omega-$ random $\iff X$ is $0'$ random $ \iff 2-$ random.\\
+      Next time we'll see that all left c.e. $1$ randoms are essentially the same. So low for $\Omega$ is well defined.
+      \newpage
+      \section{Lecture 12}
+       
+      
 \end{document}
