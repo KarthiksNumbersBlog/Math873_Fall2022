@@ -239,6 +239,20 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
       Next time we'll see that all left c.e. $1$ randoms are essentially the same. So low for $\Omega$ is well defined.
       \newpage
       \section{Lecture 12}
+      \subsection{Left c.e. ML randoms}
+      We have seen examples $\Omega = \mu[dom U]$ and $\sum_{\sigma \in 2^{<\omega}} 2^{-K(\sigma)}$ and if $P$ is a non empty $\Pi^0_1$ class containing only randoms, take its left most element.\\
+      \textbf{Theorem} If $\alpha$ is a left c.e. $ML$ random, then $\alpha \equiv_T 0'$ (even with respect to wtt)\\
+      Proof: $0'$ computes all left c.e. reals. For the other direction, $\alpha$ has c.e. $DNC$ degree so $\alpha \geq_T 0'$ by Arslanov completness criteria.\\
+      Define $V_n = [\alpha_s|n]$ if $n$ enters $0'$ at stage $s$ and $\emptyset $ otherwise. So $\{V_n\}$ is a $ML$ test, hence $\exists N \forall n\geq N \alpha \not \in V_n$. But then $n \in 0' \iff n \in 0'_s$ where $\alpha_s|_n = \alpha|_n$. So $\alpha \geq_{wtt} 0'$.
+       \\
+       \subsection{Solavay Reducibility}
+       \textbf{Def}: Let $\alpha,\beta$ be left- c.e. reals, then $\beta \leq_s \alpha$ if $\exists d \in \omega, \gamma$ left c.e. such that $2^{-d} \beta + \gamma = \alpha$.\\
+       $\leq_S$ is transitive and if $\beta \leq_S \alpha$ then from $\alpha|_n$ we can uniformly approximate $\beta$ to within $2^{-n+d+1}$. Therefore $\leq_S  \implies \leq_T$ but not uniformly. $K(\beta|_n) \leq^+ K(\alpha|_n)$.\\
+       \textbf{Theorem:} $\alpha$ is left c.e. and $ML$ random $\iff$ there is a universal prefix free $R$ such that $\alpha = \Omega_R = \mu[dom R] \iff \alpha $ is left c.e. and Solovay complete.\\
+       \textbf{Corollary} Any two left c.e. ML randoms are Solovay equivalent and so have the same initial segment complexity and are random relative to the same oracles. Therefore low for $\Omega$ is well defined.\\
+       Proof of Theorem:  $\Omega_R$ is left c.e. $ML$ random follows from the same proof that $\Omega$ is. If $\beta$ is left c.e and $\{\alpha_s\}, \{\beta_s\}$ be left c.e. approximations to $\alpha, \beta$ and assume $\beta_s < \beta_{s+1}$ and $\beta_{-1} = 0$. Build a $ML$ test $\{F_n\}$ on $[0,1]$ as follows: If $\alpha_s \in $ closure$(F_{n,s})$ do nothing, otherwise put $(\alpha_s, \alpha_s + 2^{-n} (\beta_{s+1} - \beta_{t_s}))$ into $F_n$ where $t_s$ is the last stage at which we put something into $F_n$. Note that $\mu(F_n) \leq 2^{-n} \beta \leq 2^{-n}$. If $\alpha \not \in F_n$ then $\mu(F_n) = 2^{-n} \beta$. So $\{F_n\}$ is a ML test and so $\alpha \not \in F_n$ for some $n$. Let $\gamma = \mu([0,\alpha] - F_n) = lim_s \mu([0,\alpha_s]- F_{n,s})$ which is non decreasing since we never add anything $F_{n,s+1}$ behind $\alpha_s$. So $\gamma$ is left c.e. and $2^{-n} \beta + \gamma = \alpha$ and so $\beta \leq_S\alpha$. 
        
+       
+       \textbf{Barmpalias and Lewis Pye}: If $\alpha, \beta$ are left c.e. randoms and $\{\alpha_s\}, \{\beta_s\}$ are left c.e. approximations to $\alpha, \beta$, then the limit $\alpha-\alpha_s/ \beta - \beta_s$ exists and does not depend on the choice of approximations.
       
 \end{document}
