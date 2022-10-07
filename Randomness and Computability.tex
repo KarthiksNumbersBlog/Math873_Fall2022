@@ -244,15 +244,43 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
       \textbf{Theorem} If $\alpha$ is a left c.e. $ML$ random, then $\alpha \equiv_T 0'$ (even with respect to wtt)\\
       Proof: $0'$ computes all left c.e. reals. For the other direction, $\alpha$ has c.e. $DNC$ degree so $\alpha \geq_T 0'$ by Arslanov completness criteria.\\
       Define $V_n = [\alpha_s|n]$ if $n$ enters $0'$ at stage $s$ and $\emptyset $ otherwise. So $\{V_n\}$ is a $ML$ test, hence $\exists N \forall n\geq N \alpha \not \in V_n$. But then $n \in 0' \iff n \in 0'_s$ where $\alpha_s|_n = \alpha|_n$. So $\alpha \geq_{wtt} 0'$.
-       \\
        \subsection{Solavay Reducibility}
        \textbf{Def}: Let $\alpha,\beta$ be left- c.e. reals, then $\beta \leq_s \alpha$ if $\exists d \in \omega, \gamma$ left c.e. such that $2^{-d} \beta + \gamma = \alpha$.\\
        $\leq_S$ is transitive and if $\beta \leq_S \alpha$ then from $\alpha|_n$ we can uniformly approximate $\beta$ to within $2^{-n+d+1}$. Therefore $\leq_S  \implies \leq_T$ but not uniformly. $K(\beta|_n) \leq^+ K(\alpha|_n)$.\\
        \textbf{Theorem:} $\alpha$ is left c.e. and $ML$ random $\iff$ there is a universal prefix free $R$ such that $\alpha = \Omega_R = \mu[dom R] \iff \alpha $ is left c.e. and Solovay complete.\\
        \textbf{Corollary} Any two left c.e. ML randoms are Solovay equivalent and so have the same initial segment complexity and are random relative to the same oracles. Therefore low for $\Omega$ is well defined.\\
-       Proof of Theorem:  $\Omega_R$ is left c.e. $ML$ random follows from the same proof that $\Omega$ is. If $\beta$ is left c.e and $\{\alpha_s\}, \{\beta_s\}$ be left c.e. approximations to $\alpha, \beta$ and assume $\beta_s < \beta_{s+1}$ and $\beta_{-1} = 0$. Build a $ML$ test $\{F_n\}$ on $[0,1]$ as follows: If $\alpha_s \in $ closure$(F_{n,s})$ do nothing, otherwise put $(\alpha_s, \alpha_s + 2^{-n} (\beta_{s+1} - \beta_{t_s}))$ into $F_n$ where $t_s$ is the last stage at which we put something into $F_n$. Note that $\mu(F_n) \leq 2^{-n} \beta \leq 2^{-n}$. If $\alpha \not \in F_n$ then $\mu(F_n) = 2^{-n} \beta$. So $\{F_n\}$ is a ML test and so $\alpha \not \in F_n$ for some $n$. Let $\gamma = \mu([0,\alpha] - F_n) = lim_s \mu([0,\alpha_s]- F_{n,s})$ which is non decreasing since we never add anything $F_{n,s+1}$ behind $\alpha_s$. So $\gamma$ is left c.e. and $2^{-n} \beta + \gamma = \alpha$ and so $\beta \leq_S\alpha$. 
-       
+       Proof:  $\Omega_R$ is left c.e. $ML$ random follows from the same proof that $\Omega$ is. \\
+       Let $\alpha$ be left c.e ML random. If $\beta$ is left c.e and $\{\alpha_s\}, \{\beta_s\}$ be left c.e. approximations to $\alpha, \beta$ and assume $\beta_s < \beta_{s+1}$ and $\beta_{-1} = 0$. Build a $ML$ test $\{F_n\}$ on $[0,1]$ as follows: If $\alpha_s \in $ closure$(F_{n,s})$ do nothing, otherwise put $(\alpha_s, \alpha_s + 2^{-n} (\beta_{s+1} - \beta_{t_s}))$ into $F_n$ where $t_s$ is the last stage at which we put something into $F_n$. Note that $\mu(F_n) \leq 2^{-n} \beta \leq 2^{-n}$. If $\alpha \not \in F_n$ then $\mu(F_n) = 2^{-n} \beta$. So $\{F_n\}$ is a ML test and so $\alpha \not \in F_n$ for some $n$. Let $\gamma = \mu([0,\alpha] - F_n) = lim_s \mu([0,\alpha_s]- F_{n,s})$ which is non decreasing since we never add anything $F_{n,s+1}$ behind $\alpha_s$. So $\gamma$ is left c.e. and $2^{-n} \beta + \gamma = \alpha$ and so $\beta \leq_S\alpha$.  
+       \\
+       (Lecture 13) Let $\alpha$ be Solovay complete. Choose $d\in \omega, \gamma$ left c.e. such taht $2^{-d} \Omega_U+ \gamma = \alpha$. We want $2^{-d} + \gamma \leq 1$ but we can get this. Fix $d' \geq d$ such that $2^{-d'} + \alpha \leq 1$. Then $\alpha = 2^{-d} \Omega + \gamma = 2^{-d'} \Omega + (2^{-d} - 2^{-d'})\Omega + \gamma = 2^{-d'}\Omega + \gamma'$. But now $2^{-d'} +\gamma' \leq 2^{-d'}+\alpha \leq 1$. WLOG let $d = d', \gamma = \gamma'$. Let $\{d_i\}_i$ be a computable sequence such that $\gamma = \sum 2^{-d_i}$, then $\{<d,0>, <d_i,i+1\}_i$ is a bounded request set bounded by $1$ and so there is a prefix free machine $M$ such that $\Omega_M = 2^{-d} + \gamma$, and $\exists \sigma \in 2^d$ with $M(\sigma) = 0$. Define $R$ by $R(\sigma\tau) = U(\tau)$ and $R(\tau) = M(\tau)$ otherwise.Then $R$ is universal and $\Omega_R = 2^{-d}\Omega_U + \gamma$.
        
        \textbf{Barmpalias and Lewis Pye}: If $\alpha, \beta$ are left c.e. randoms and $\{\alpha_s\}, \{\beta_s\}$ are left c.e. approximations to $\alpha, \beta$, then the limit $\alpha-\alpha_s/ \beta - \beta_s$ exists and does not depend on the choice of approximations.
-      
+       \newpage
+       \section{Lecture 13}
+       \textbf{Definition:} (Solovay functions) A computable $g: 2^{<\omega} \to \omega$ is a Solovay function if \\
+       $i) K(\sigma) \leq^+ g(\sigma) $
+       \\ $ii) \exists c,\exists^\infty \sigma$ such that $g(\sigma) \leq K(\sigma) + c$. \\
+       If  $g$ is right $c.e.$ and satisfies $i,ii)$ then call $g$ a weak Solovay function.
+      \textbf{Proposition} If $g: 2^{<\omega} \to \omega$ is right c.e., then $K(\sigma) \leq^+ g(\sigma) \iff \sum 2^{-g(\sigma)} < \infty$.
+      \\ The backward direction is by optimality of $K$.  The forward direction is since $K$ satisfies the property that we require of $g$.
+      \\
+      \textbf{Proposition}: There is a Solovay function.\\
+      Proof: Let $g(<\sigma,\tau,t>) = |\tau|$ if $U(\tau) = \sigma, t$ is the stage at which $U(\tau) \downarrow$ and $2|<\sigma,\tau,t>|$ (something big) otherwise.\\
+      Now $\sum_{\sigma \in 2^{<\omega}}  2^{-g(\sigma)} \leq \sum_{\sigma \in 2^{<\omega}} 2^{-2|\sigma|} + \sum_{\tau \in dom U} 2^{-|\tau|} = 2+ \Omega < \infty$. So $K(\sigma) \leq^+ g(\sigma)$. Now let $\tau$ be a shortest $U$ program for $\sigma$ and $U(\tau) \downarrow$ at stage $t$. Then $g(<\sigma,\tau,t>) = |\tau| = K(\sigma) \leq^+ K(<\sigma,\tau,t>)$ for such $\tau, \sigma, t$.\\\\
+      From now on we look at functions as being from $\omega \to \omega$ (instead of $2^{<\omega} \to \omega$).\\
+      \textbf{Theorem} Let $f: \omega \to \omega$ be right c.e.. Then $f$ is a weak Solovay function $\iff \sum 2^{-f(n)}$ is finite and ML -random. (Note that the sum is left c.e.)
+      \\
+      Proof: Big proof on next page
+      \\
+      \textbf{Facts:} If $f$ is any (weak) Solovay function then :
+      \\ $a) A $ is $K$ trivial $\iff K(A|_n) \leq^+ f(n)$.\\
+      $b) A$ is ML random $\iff C(A|_n)\geq^+ n-f(n)$. \\
+      \textbf{Definition:} $A$ is low for $\Omega$ if $\Omega$ is $A-$ random.\\
+      $A$ is weakly low for $K$ if $\exists c \exists^\infty n $ such that $K(n) \leq K^A(n) + c$.
+      \\
+      \textbf{Theorem} The following are equivalent for $A\in 2^{\omega}$.\\
+      i) $A$ is low for $\Omega$\\
+      ii) $A$ is weakly low for $K$.\\
+      Proof: $A$ is low for $\Omega \iff \Omega $ is $A-$ random $\iff \sum 2^{-K(n)} $ is $A$ random $\iff \sum 2^{-K(n)} $ is finite and $K$ is right c.e. (relative to A) $\iff K$ is a weak Solovay function relative to $A$ $\iff A$ is weakly low for $K$.\\
+      \\ Aside: For $A\in 2^\omega$ $A$ is low for random ($X$ ML random $\implies $ X is $A$ random) $\iff A$ is low for $K$ ($K(\sigma) \leq^+ K^A(\sigma)$) $\iff$ $A$ is $K$ trivial. Also all such $A$ are $\Delta^0_2$).
 \end{document}
