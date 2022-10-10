@@ -283,4 +283,20 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
       ii) $A$ is weakly low for $K$.\\
       Proof: $A$ is low for $\Omega \iff \Omega $ is $A-$ random $\iff \sum 2^{-K(n)} $ is $A$ random $\iff \sum 2^{-K(n)} $ is finite and $K$ is right c.e. (relative to A) $\iff K$ is a weak Solovay function relative to $A$ $\iff A$ is weakly low for $K$.\\
       \\ Aside: For $A\in 2^\omega$ $A$ is low for random ($X$ ML random $\implies $ X is $A$ random) $\iff A$ is low for $K$ ($K(\sigma) \leq^+ K^A(\sigma)$) $\iff$ $A$ is $K$ trivial. Also all such $A$ are $\Delta^0_2$).
+      \newpage
+      \section{Lecture 14}
+      \textbf{Theorem:} let $f: \omega \to \omega$ be right c.e. Then $f$ is a weak Solovay function $\iff \sum 2^{-f(n)}$ is finite and $ML$ random.\\
+      Proof: Assume $\sum 2^{-f(n)}$ is finite. \\
+      For the backward direction, assume that $f$ doesn't satisfy $\exists c\exists^\infty n $ such that $f(n) \leq K(n) + c \iff \Omega_f = \sum 2^{-f(n)}$ is $ML$ random. \\
+      Fix a compute approximation $\{f_s\}$ to $f$ such taht $\forall n \; f_0(n)\leq f_1(n)\geq f_2(n)...$. We define a left c.e. approximation to $\Omega_f$ as follows: $a_0 = 0$ and $a_{i+1} = a_i+ d_i$ where $\{d_i\}$ is defined as follows: To find $d_i$, search for the next pair of the form $<n,0>$ or $<n,s+1>$ where $f_s(n) - f_{s+1}(n)> 0$. In the first case $d_i = 2^{-f_0(n)}$ and in the second case $d_i = 2^{-f_{s+1}(n)} - 2^{-f_s(n)}$.\\
+      We say $d_i$ occurs due to $n$ and let $b_i$ = sum of all $d_j$ due to $n$ for $j\leq i$. So $lim a_i = \Omega_f$. \\
+      We define a $ML$ test $\{U_c\}_{c \in \omega}$ with the goal of covering $\Omega_f$. Say that $i$ is $c-$ matched if $d_i$ occurs due to $n$ and $2^{c+1}b_i \leq 2^{-K(n)}$. If we see that $i$ is matched at stage $s$, add an interval of length $2d_i$ to $U_c$ starting at $max(\{a_i, sup U_{c,s}\}) $.\\Note $\sum \{d_i : d_i $ occurs for $n$ and is $i$ matched $\} \leq 2^{-K(n)}/2^{c+1}$. So $\mu(U_c) = 2\sum_i \{d_i : i $ is $c- $matched $\} \le 2/2^{c+1} = 2^{-c}$.\\
+      So $\{U_c\}_{c\in \omega}$ is a $ML$ test. $\Omega_f \in \cap U_c$. Since $lim_{n \to \infty} f(n) - K(n) = \infty$. Fix $c$. For $n$ large enough, all corresponding $i$ will be $c-$ matched. So there is an $i(c)$ such th at $i \geq i(c) \implies i $ is $ c $ matched. For these $i'$s add intervals to $U_c$ of length $\beta = 2(\Omega_f - a_{i(c)})$, all above $a_{i(c)}$. Since $\Omega_f - a_{i(c)} < \beta$ for $\Omega_f \not \in U_c$ then it must be in one of the gaps. But each gap has supremum $a_i$ for some $i$ and $a_i \leq \Omega_f$ and $a_i \neq \Omega_f$. So $\Omega_f$ is not in any gap and the backward direction is done.\\
+     Forward direction in next lecture.\\
+      \textbf{Theorem}  The following are equivalent for $A \in 2^\omega$.\\
+      i) $A$ is $2$ random \\
+      ii) $A $ is $1$ random and low for $\Omega$\\
+      iii) $A$ is $1-$ random and weakly low for $K$.
+      iv) $\exists c, \exists^\infty n$ with $K(A|_n) \geq n+K(n) -c$\\
+      v) $\exists c \exists^\infty n $ such that $C(A|_n) \geq n-c$.\\
 \end{document}

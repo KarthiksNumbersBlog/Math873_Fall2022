@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  7 OCT 2022 15:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  10 OCT 2022 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -554,28 +554,33 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 204.
 
-[11] [12] [13] 
+[11] [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 260--286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--286
+
+ []
+
+[14] 
 AED: lastpage setting LastPage
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--286
+Underfull \hbox (badness 10000) in paragraph at lines 288--302
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--286
-
- []
-
-[14] (./Randomness and Computability.aux)
+[15] (./Randomness and Computability.aux)
 Package rerunfilecheck Info: File `"Randomness and Computability".out' has not 
 changed.
-(rerunfilecheck)             Checksum: DF25B299BF249CA52186E5AFCA43923E;2087.
+(rerunfilecheck)             Checksum: 2E3031E6D7186A16CFB56DBFAD960C3A;2185.
  ) 
 Here is how much of TeX's memory you used:
- 11564 strings out of 478994
- 167837 string characters out of 5858184
+ 11567 strings out of 478994
+ 167866 string characters out of 5858184
  495593 words of memory out of 5000000
- 28844 multiletter control sequences out of 15000+600000
+ 28845 multiletter control sequences out of 15000+600000
  411293 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,6n,74p,959b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -596,10 +601,10 @@ ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 21/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Randomness and Computability.pdf" (14 pages, 251066 bytes).
+Output written on "Randomness and Computability.pdf" (15 pages, 255506 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
- 200 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
