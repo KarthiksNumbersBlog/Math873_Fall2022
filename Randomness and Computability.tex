@@ -298,5 +298,74 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
       ii) $A $ is $1$ random and low for $\Omega$\\
       iii) $A$ is $1-$ random and weakly low for $K$.
       iv) $\exists c, \exists^\infty n$ with $K(A|_n) \geq n+K(n) -c$\\
-      v) $\exists c \exists^\infty n $ such that $C(A|_n) \geq n-c$.\\
+      v) $\exists c \exists^\infty n $ such that $C(A|_n) \geq n-c$.\\ \newpage
+      \section{Lecture 15}
+      We shall now show that if $f: \omega \to \omega$ is right c.e then $f$ is a weak Solovay function $\implies \Omega_f = \sum 2^{-f(n)}$ is finite and $ML$ random. So we want to show that if $\alpha = \Omega_f $ is not $ML$ random then $f(n) - K(n) \to \infty$. \\
+      Suppose $\alpha = \Omega_f$ is not $ML$ random. We build a bounded request set $B$ as follows: If $U(\tau) = \sigma$ wait until $|\alpha_s - \sigma| < 2^{-|\sigma|}$ where $\alpha_s = \sum_{n\leq s} 2^{-f_s(n)}$. Then for all $n\geq s,m\geq 0,$ put $<n,|\tau| - |sigma| + f(n) + 2 +m> $ into $B$ upto a total weight of $2^{-|\tau|}$.  So $B$ is a bounded request set because the total weight of $B$ is $\leq \sum_{\tau \in dom(U)} 2^{-|\tau|} \leq 1$. \\
+      If $\sigma = \alpha|-k$ then $s$ exists and $|\alpha - \alpha_s| < 2^{-K+1}$ and so $\sum_{n> s} 2^{f(n) } \leq \alpha - \alpha_s < 2^{-k + 1}$. So we are trying to add at most weight $\sum_{n>s}2.2^{-|\tau| + k -f(n)-2} < 2.2^{-\tau| + k - (k+1) - 2} = 2^{-|\tau|}$.\\
+      If $\sigma = \alpha|_k$ for $n>s$, we have $K(n) \leq^+ |\tau| - k + f(n)$, where the constant doesnt depend on $\tau$, since for each $c$ $\exists k$ with $K(\alpha|_k) \leq kc$ so for large $n$, $K(n) \leq^+ (k-c)-k+f(n) = f(n) - c$. So $K(n) -f(n) \to \infty$.
+      \\
+      \textbf{Theorem}: The folowing are equivalent for $A \in 2^\omega$.\\
+      i) $A$ is $2-$ random\\
+      ii)$A$ is $1$ random and low for $\Omega$\\
+      iii) $A$ is $1-$ random and WLK\\
+      iv) $\exists c, \exists^\infty n $ such that $K(A|_n) \geq n + K(n) - c$\\
+      v) $\exists c, \exists^\infty n$ such that $C(A|_n) \geq n-c$.\\
+      Proof: $i\iff ii$ is by VL theorem and $\Omega\equiv_T 0'$.\\
+      $ii \iff iii$ follows by low for $\Omega \iff WLK$.\\
+      $iii \iff iv$ : If $A$ is $1-$ random then $\sum 2^{n-K(A|_n)}< \infty - Ample excess$\\
+      Corollary: If $A$ is $1-$ random then $K^A(n) \leq^+ K(A|_n) - n$ since $\{<K(A|_n) - n + m , n>_{m,n \in \omega} $ is a bounded request set  which is $c.e.$ relative to $A$. So $K^A(n) \leq^+ K(A|_n) - n$.\\
+      Now since $A$ is WLK, $K(A|_n) \geq^+ n + K^A(n) \geq^+ n + K(n)$ for infinitely many $n$.\\
+      $iv \implies v:$ We have $K(\sigma) \leq^+ C(\sigma) + K(C(\sigma))$. Also $K(n) \leq^+ K(m-n ) + K(m)$. So $K(\sigma) \leq^+ |\sigma| + K(|\sigma| ) - (|\sigma| - C(\sigma) - K(|\sigma| - C(\sigma))$. Now let $d_n = n-C(A|_n)$ and assume $d_n \to \infty$. Then $n+K(n) -K(A|_n) \geq^+ d_n-K(d_n)\geq^+ d_n - 2log(d_n)\to \infty$.\\
+      $v \implies i$ $K$ maximal $ \implies C$ maximal. The reverse does not hold.
+      \newpage\section{Lecture 16}
+      v $\implies$ i (from previous lecture): Let $U$ be a universal prefix free oracle machine. Suppose $A$ is not $2-$ random. So $\forall c, \exists^\infty n K^{0'}(A|_n)<n-c$. \\
+      Let $\sigma_c$ be a string witnessing this. Now define a plain machine $M$: On input $\gamma$ let $t = |\gamma|$, then $M$ looks for a $\sigma \prec \gamma$ such that $U_t^{0'_t}(\sigma) \downarrow$. (at most one such $\sigma$). If $\gamma = \sigma \tau$ then $M(\gamma) = U_t^{0'_t}(\sigma)\tau$. So we are using the extra bits $\tau$ to get a large enough $t$ to get the computation correct. For large enough $t$, $U_t^{0'_t}(\sigma_c) = A|_n$. So $M(\sigma_c A|_{[n,t)}) = A|t$ and $C_M(A|_t) < t-c$. \\
+      \\
+      \subsection{A technical result} 
+      Recall: A $c.e.$ set $A\subset \omega$ is simple if it is coinfinite and $\overline{A}$ has no infinite $c.e.$ subset. Clearly simple $\implies$ not computable.\\
+      \textbf{Lemma}: If $H \subset 2^\omega$ is a null $\Sigma^0_3$ class. Then there is a simple set $A $ satisfying $\forall Y \in H$ with $Y$ ML random, $A \leq_T Y$.
+      \\ Proof: First let $H$ be $\Pi^0_2$. Then $H = \cap V_X$ for an effective sequence of $\Sigma^0_1$ classes. We may assume $V_{x+1} \subset V_x$ by taking intersections. Let $V_x = [D_x]$ where $D_x$ is prefix free c.e. and let $V_{x,s} = [D_{x,s}]$. Want to satisfy \\
+      $R_e: |W_e| = \infty \implies W_e \cap A \neq \emptyset$. \\
+      Define $C(n,s) = \mu(V_{n,s})$, called the cost function. We know $\mu(V_n) \to 0$ as $n \to \infty$.  \\
+      Put $x$ into $A$ at stage $s$ for the sake of $e$ if i) $W_{e,s} \cap A_s = \emptyset$. ii) $x \in W_{e,s}$ iii) $c(x,s) < 2^{-e}$ iv) $x \geq 2e$\\
+      We will meet all $R_e$ so $A$ is simple.\\
+      Define $\Gamma^Y $ as follows: If $\sigma$ goes into $D_n$ at stage $s$ let $\Gamma^\sigma(n) = A_s(n)$. This fails for any $Y \in V_{x,s}$ if $x$ goes into $A$ at stage $s$. But $\mu(V_{x,s}) < 2^{-e}$.\\
+      Let $U_n = \cup \{V_{x,s}: x $ goes into $A$ at stage $s$ for the sake of $e>n\}$. So $\mu(U_n) < 2^{-n}$ and $\{U_n\}_{n \in \omega}$ is a $ML$ test.\\
+      If $Y \in H$ is $ML$ random, so $\Gamma^H$ will be total and $Y \not \in U_n$ for some $n$ so $\Gamma^Y =^* A $ (at most $n$ mistakes). Therefore $Y \geq_T A$.\\
+      To extend this to a $\Sigma^0_3$ class $H = \cup_i \cap_x V_x^i$, take $c(x,s) = \sum_i 2^{-i}\mu(V_x^i,s) $. This works out (details left out)\\
+      \textbf{Theorem} (Kucera): If $Y$ is a $\Delta^0_2$ ML random then $Y$ computes a simple set. \\
+      Proof: $\{Y\} = \{X : \forall n,t \exists s>t \; Y_s|_n \prec X\}$ is null $\Pi^0_2$.\\
+      \textbf{Theorem} (Friedberg Muchnik): There is a $c.e.$ set strictly $\leq_T$ between $0$ and $0'$. \\
+      Proof: There is a low $ML$ random $Y$. (low basis theorem). Take $A \leq_TY$ simple using previous theorem.\\
+      \newpage
+      \section{Lecture 17}
+      \textbf{Lemma} If $H\subset 2^\omega$ is a null $\Sigma^0_3$ class then there is a simple set $A$ such that $A \leq_TY$ for each $ML$ random $Y \in H$.
+      \\
+      \textbf{Proposition:} If $\Omega = \Omega_0 \oplus \Omega_1$ then $(\Omega_0, \Omega_1)$ do not form a minimal pair.
+      \\
+      Proof: $\{\Omega_0, \Omega_1\}$ is a null $\Pi^0_2$ class. \\
+      Facts: i) $A \leq_T \Omega_0, \Omega_1$ must be $K -$ trivial (we will see this)\\
+      ii) These are not all $K$ trivials (We will not see this)
+      \subsection{Weak 2- randomness ('strong 1 random'- Joe)}
+      \textbf{Definition:} $A \in 2^\omega$ is weak $2$ random if $A$ is not in any null $\Pi^0_2$ class.\\
+      So we have $2- random \implies $ weak $2 - random \implies 1 - random$: The second implication follows from the fact that $\{U_n\}$ being an $ML$ test $\implies \cap U_n$ is a null $\Pi^0_2$ class. For the first implication given a null $\Pi^0_2$ class $\cap V_n$ with the $V_n's$ nested, then $0'$ can uniformly find indices $m_n$ such that $\mu(V_{m_n}) \leq 2^{-n}$ and so we get a $0'$ ML test.\\
+      $\Omega$ is $1-$ random but not weak $2-$ random because $\{\Omega\}$ is a null $\Pi^0_2$ class.\\
+      We will see that every hyper immune free $1-$ random is weak $2 - $ random but not $2-$ random.\\
+      \textbf{Theorem:} $A$ is weakly $2-random \iff  A$ forms a minimal pair with $9'$ (computes no noncomputable $\Delta^0_2$ set) $\iff  A$ does not compute a simple set.\\
+      Proof: If $A$ is not weakly $2- $ random then it is in some null $\Pi^0_2$ class $H$ but then there is a simple set $B \leq_T A$ by the lemma. \\
+      Clearly if $A, 0'$ are a minimal pair then $A$ cannot compute a simple set.\\
+      If $X$ is a non computable $\Delta^0_2$ set then $\{Z : Z \geq_TX\}$ is null. Also $\{Z : Z \geq_TX\} = \cup_e \{Z : \forall n,t \exists s\geq t \varphi_{e,s}^Z(n) = X_s(n); \} $ and so is $\Sigma^0_3$ so $A \not \geq_T X$.
+      \subsection{Hyperimmune degrees}
+      \textbf{Definition}: Call $f : \omega \to \omega$ an escaping function if it is not dominated (equivalently majorized) by any computable function.\\
+      \textbf{Definition:} $X$ has hyperimmune degree if it computes an escaping function, otherwise it has hyperimmune free degree.\\
+      \textbf{Facts:} Every nonempty $\Pi^0_1$ class contains a $HIF$ member.\\
+      Every noncomputable $\Sigma^0_2$ set has hyperimmune degree.\\
+      \textbf{Corollary:} If $A$ is $HIF$ and $1-$ random then $A$ is weakly $2-$ random.\\
+      Proof: If $A$ is not weakly $2-$ random then $A \geq_T C$ where $C$ is simple and so $A$ computes an escaping function and so $A$ would not be $HIF$.\\
+      \textbf{Theorem:} If $X$ is $2-$ random then it has hyperimmune degree.\\
+      \textbf{Lemma:} Let $P$ be a $\Pi^0_1[X]$ class of positive measure, then every $X-$ random has a tail in $P$.\\
+      Proof: Let $V$ be $X-$ c.e, prefix free so that $P = [V]^c$. Let $V_1 = V$, and $V_{n+1} = \{\sigma\tau : \sigma \in V_n, \tau \in V\}$. $\mu[V_n] = (\mu[V_1])^n$. So a linear subsequence of $\{[V_n]\}_n$ is an $X-$ ML test. Let $Z$ be $X-$ random and $n = \mu s Z \not \in [V_n]$. So $\exists \sigma \in V_{n-1}\; \sigma \prec Z$ let $Z = \sigma Z_0$, so $Z_0 \in P$. 
+      \section{Lecture 18}
+      
 \end{document}
