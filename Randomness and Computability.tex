@@ -367,5 +367,27 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
       \textbf{Lemma:} Let $P$ be a $\Pi^0_1[X]$ class of positive measure, then every $X-$ random has a tail in $P$.\\
       Proof: Let $V$ be $X-$ c.e, prefix free so that $P = [V]^c$. Let $V_1 = V$, and $V_{n+1} = \{\sigma\tau : \sigma \in V_n, \tau \in V\}$. $\mu[V_n] = (\mu[V_1])^n$. So a linear subsequence of $\{[V_n]\}_n$ is an $X-$ ML test. Let $Z$ be $X-$ random and $n = \mu s Z \not \in [V_n]$. So $\exists \sigma \in V_{n-1}\; \sigma \prec Z$ let $Z = \sigma Z_0$, so $Z_0 \in P$. 
       \section{Lecture 18}
+      \textbf{Corollary}: Let $C $ be a degree invariant class and $P\subset C$ a positive measure $\Pi^0_1$ class. Then every $X$ random is in $C$. \\
+      \textbf{Lemma}: There is a $\Pi^0_1[0']$ class $P$ of positive measure all of whose elements compute an escaping function. (by a single $\psi$).\\
+      Proof: Let $R_e: \exists n \; \psi^A(n)\downarrow > \varphi_e(n)$ for all $A\in P$. We act independently for each $R_e$.  At stage $s$ if $s$ is not currently a witness for some $R_e$ ensure that $\psi^A(s)\downarrow \forall A$.\\
+      Action of the $R_e$ strategy: Let $\sigma_0, ..., \sigma_{2^{e+2}}$ list string of length $e+2$ and set $i=0$. Pick a fresh witness $n$ and define $\psi^{\sigma_j}(n)=0$ when $j\neq i$. Wait for $\varphi_e(n)\downarrow$. (measure risking strategy). Set $\psi^{\sigma_i}(n) = \varphi_e(n)+1$. Increment $i$. If $i \leq 2^{e+2}, goto \;2$. \\
+      Now if $\varphi_e$ is total then $R_e$ is satisfied eventually $\forall A$, otherwise we don't care. We might wait forever on some $\sigma_i$ so $\psi^A(n)\uparrow \forall \sigma_i \prec A$. $0'$ can enumerate all strings on which some $R_e$ waits forever. Let $P= \{A: \psi^A $ is total $\}$ so $P$ is a $\Pi^0_1[0']$ class. $\psi^A$ is escaping for $A \in P$ and $\mu(P) \geq 1 - \sum 2^{-e-2} = 1/2$.
+      \\
+      \textbf{Theorem:} Every $2-$ random computse an escaping function i.e. has hyperimmune degree.\\
+      \textbf{Corollary}: There is a weak $2-$ random that is not $2-$ random.\\
+      Proof:Take any HIF $1-$ random, by HIF basis theorem.\\
+      \textbf{Fact:} Every $2-$ random computse a $1- generic$.
+      \subsection{Scott Sets}
+      We will see an application of the above results. \\
+      \textbf{Definition:} i) $B$ has $PA$ degree relative to $A$ if $B$ computes an element of every  nonempty $\Pi^0_1[A]$ class.\\
+     ii) $S \subset 2^\omega$ is a Turing ideal if $A\in S, B\leq_TA \implies B \in S$ and $A,B \in S \implies A\oplus B \in S$.\\
+    iii) $S \subset 2^\omega$ is a Scott set if it is a Turing ideal and $\forall A \in S \exists B \in S$ such that $B$ is $PA$ relative to $A$.
+      \\ These arise in the study of models of PA. They are the $2nd $ order parts of $\omega$ models of $WKL$.\\
+      Question (Friedman, McAllister): If $S$ is a Scott ideal and $A \in S$ is non computable is there a $B\in S$ such that $A|_T B$.\\
+      Answer (Kucera, Slaman): Yes! Broke down by cases: $A$ is/is not $K$ trivial.\\
+      Question: Can there be a maximal antichain of size $2$.\\
+      Conidis:Generalized $KS$ to $\omega$ models of $WWKL$ (weak weak Konig's lemma).\\
+      \textbf{$\omega$ model of $WWKL$}: Turing ideal $S$ satisfying for every $A \in S, \exists B \in S$ that is random relative to $A$ or equivalenetly $\forall A \in S$ every $\Pi^0_1[A]$ class of positive measure has an element in $S$.\\
+      Note : $S$ a Scott set $\implies S$ is an $\omega-$ model of $WWKL$.
       
-\end{document}
+    \end{document}
