@@ -25,3 +25,5 @@
 \contentsline {subsection}{\numberline {17.2}Hyperimmune degrees}{19}{subsection.17.2}%
 \contentsline {section}{\numberline {18}Lecture 18}{20}{section.18}%
 \contentsline {subsection}{\numberline {18.1}Scott Sets}{20}{subsection.18.1}%
+\contentsline {section}{\numberline {19}Lecture 19}{21}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Lowness and K - triviality}{21}{subsection.19.1}%

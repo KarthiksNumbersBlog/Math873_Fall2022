@@ -389,5 +389,36 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
       Conidis:Generalized $KS$ to $\omega$ models of $WWKL$ (weak weak Konig's lemma).\\
       \textbf{$\omega$ model of $WWKL$}: Turing ideal $S$ satisfying for every $A \in S, \exists B \in S$ that is random relative to $A$ or equivalenetly $\forall A \in S$ every $\Pi^0_1[A]$ class of positive measure has an element in $S$.\\
       Note : $S$ a Scott set $\implies S$ is an $\omega-$ model of $WWKL$.
+      \newpage
+      \section{Lecture 19}
+      $S$ is a Scott set $\implies  S$ is an $\omega$ model of $WWKL$.\\
+      \textbf{Theorem(Westrick)}: If $S$ is an $\omega-$ model of $WWKL$ then for every $A \in S$ there is a $B \in S$ that is either weak $2-$ random relative to $A$ or $1-$ generic relative to $A$.\\
+      Proof: Let $B\in S$ be $1-$ random relative to $A$. If $B$ is not weak $2-$ random relative to $A$ then there is an $A-c.e.$ set $C \leq_T B \oplus A$ such that $C \not \leq_T A$.\\
+      Fact: Every non computable $c.e.$ set computes a $1-$ generic.\\
+      Relativizing if $C \not \leq_TA$ is $A-$ c.e. then there is $D \leq_TC \oplus A$ that is $1-$ generic relative to $A$. Note that $ D \in S$. \\
+      Facts: Assume $A$ is not computable. i) If $B$ is $1-$ generic relative to $A$ then $B |_T A$ (In fact they form a minimal pair)\\
+      ii) If $B$ is weak 2 - random relative to $A$ then $B |_T A$: 
+      Clearly $B$ $A-$ random $\implies B \not \leq_T A$. for the other direction note that $\{z: z \geq_TA\} = \cup_e \{z : \varphi_e^Z = A\} = \cup_e \{z : \forall n \exists s \; \varphi_{e,s}^z(n) \downarrow = A(n)\}$ is a $\Sigma^0_3[A]$ class and so $B \not \geq_T A$.\\
+      \textbf{Corollary (Westrick)}: If $S$ is an $\omega-$ model of $WWKL$ and $A_1,...,A_n \in S$ are noncomputable then there is a $B\in S$ such that $B |_T A_i \forall i$.\\
+      Proof: Let $X$ be a $1-$ generic or weak $2$ random relative to $A_1 \oplus ...\oplus A_n$ hence relative to each, hence $T$ incomparable from each. 
+      \subsection{Lowness and K - triviality}
+      The following are equivalent for $A \in 2^\omega$:\\
+       i) $A$ is low for $K$ - $K^A(\sigma) \geq^+ K(\sigma)$.\\ ii) $A$ is low for random - $X 1- $ random $\implies X \; A$ random. \\
+      iii) $A$ is a base for $1-$ randomness- There is an $A-$ random $X \geq_TA$ \\
+      iv) $A$ is $K-$ trivial: $K(A|_n) \leq^+ K(n)$.\\
+      iv) If $Z \not \geq_T0'$ is $1-$ random then $Z \oplus A \not \geq_T 0'$.\\
+      v) $A$ is computable from every low for $\Omega$ PA degree. (and a lot more)\\
+      Easy Implications: $1\implies 2$: $X$ is $1-$ random $\iff K(X|_n) \geq^+ n \iff K^A(X|_n) \geq^+ n$.\\
+      $2\implies 3$ By Kucera Gacs, there is a $1-$ random $X \geq_TA$ but $X$ is automatically $A - $ random.\\
+      $1\implies 4$ $K(A|_n) \leq^+ K^A(A|_n) =^+ K^A(n) \leq^+ K(n)$.\\
+      (hard) $2 \implies 1$: \\
+      \textbf{Definition:} $A\leq_{LR} B$ if every $B-$ random is $A-$ random. $A \leq_{LK} B$ if $K^A(\sigma) \geq^+ K^B(\sigma)$.
+      We want to show $A \leq_{LR} B \iff A \leq_{LK} B$. If $A \leq_{LK} B$ and $X$ is $B-$ random then $K^B(X|_n) \geq^+ n$ so $K^A(X|_n) \geq^+ K^B(X|_n) \geq^+ n$ and hence $X$ is $A-$ random.
+      \\ \textbf{Lemma:} If there is a prefix free machine $M$ such that $Z = z_0 z_1 z_2 z_3...$ where $\forall i  K_M(z_i) \leq |z_i| - 1$ then $Z$ is not $ML$ random.\\
+      Proof Define a prefix free macine $N$ such that on $\sigma$ it searches for a $\gamma \prec \sigma$ such that $U(\gamma) \downarrow$, if $U(\gamma)  =n $, then $N$ searches for $n \; M-$ programs $y_0,...,y_{n-1}$ such that $\sigma = \gamma y_0 ... y_{n-1}$. Then $N(\sigma) = M(y_0)...M(Y_{n-1})$. So $K(z_0...z_{n-1}) \leq^+ K_N(z_0...z_{n-1}) \leq K(n) + \sum_{i < n} K_M(z_i) \leq K(n) + |z_0...z_{n-1}| - n\leq^+ |z_0...z_{n-1}| - (n-2log n) \to \infty$ as $n \to \infty$. Hence $Z$ is not $ML-$ random.\\
+      \textbf{Lemma:} If $X$ is $ML$ random and $X \in P$ where $P$ is a $\Pi^0_1$ class then $\mu(P) > 0$.
+      Proof: Let $\{P_s\}_{s \in \omega}$ approximate $P$ where each $P_s$ is clopen. Let $V_n = P_{S_n} $ where $s_n = \mu s [\mu(P_s) \leq 2^{-n}]$. Then $\{V_n\}$ is a $ML$ test covering $P$.\\
+      \textbf{Definition:} $X$ is weakly $1-$ random (Kurtz random) if $X$ avoids all null $\Pi^0_1$ classess weakly.\\
+      Note: Weakly $1-$ generic $\implies $ weakly $1-$ random.
       
     \end{document}
