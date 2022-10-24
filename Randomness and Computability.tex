@@ -419,6 +419,24 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
       \textbf{Lemma:} If $X$ is $ML$ random and $X \in P$ where $P$ is a $\Pi^0_1$ class then $\mu(P) > 0$.
       Proof: Let $\{P_s\}_{s \in \omega}$ approximate $P$ where each $P_s$ is clopen. Let $V_n = P_{S_n} $ where $s_n = \mu s [\mu(P_s) \leq 2^{-n}]$. Then $\{V_n\}$ is a $ML$ test covering $P$.\\
       \textbf{Definition:} $X$ is weakly $1-$ random (Kurtz random) if $X$ avoids all null $\Pi^0_1$ classess weakly.\\
-      Note: Weakly $1-$ generic $\implies $ weakly $1-$ random.
-      
+      Note: Weakly $1-$ generic $\implies $ weakly $1-$ random.\newpage
+      \section{Lecture 20}
+      \textbf{Proposition:} The follow are equivalent for $A \in 2^\omega$.\\
+      i) $A \leq_{LR}B$\\
+      ii) There is a $\Sigma^0_1[B]$ class $S$ such that $\mu(S) < 1$ and $\forall \sigma \; K^A(\sigma) \leq |\sigma | - 1 \implies [\sigma] \subset S$.\\
+      iii) For each prefix free oracle machine $M$ and $S$ with $\mu(S) <1$, $ \sigma \; K_{M^A}(\sigma) \leq |\sigma | - 1 \implies [\sigma] \subset S$.\\
+      Proof: $iii \implies ii$ done.\\
+      $ii \implies i$ : By assumption $S$ contains all non $A$ randoms, so $P = 2^\omega - S$ is a positive measure $\Pi^0_1[B]$ class that only contains $A$ randoms. If $X$ is $B-$ random then $X$ has a tail $X_0\in P$ so $X_0$ is $A-$ random and so $X$ is $A$ random.\\
+      $i\implies iii$: Fix $M$ such that $iii$ fails. We build a set $Z$ that is $B-$ random but not $A-$ random so $A \not \leq_{LR}B$. Let $H$ be a $\Sigma^0_1[B] class$ such that $\mu(H)< 1$ and $2^\omega - H \subset MLR^B$. We build $Z = z_0 z_1...$ such that $\forall i : a) K_{M^A}(z_i) \leq |z_i| - 1$ i.e. $Z$ is not $A$ random. $b) [ z_0 z_1...z_i] \not \subset H$ i.e. $Z$ is $B$ random.\\
+      Note that $[\varphi]$ satisfies $b)$. Inductively suppose we have $w = z_0...z_{n-1} $ such that $[w] \not \subset H$. Let $S = \{X : wX \in H\}$. So $S$ is $\Sigma^0_1[B], S \neq 2^\omega$. Note that $2^\omega - S$ contains only $B$ randoms, so it can't have measure $0$. Hence $\mu(S) < 1$. Note that the conditino in $iii)$ fails for $S$ so there is a $z_n$ such that $K_{M^A}(z_n) \leq |z_n| - 1$ but $[z_n] \not \subset S$. In other words $[z_0....z_n] \not \subset H$.\\
+      \textbf{Corollary:} $A \leq_{LR} B \iff $ every $\Sigma^0_1[A]$ class $G$ with $\mu(G) < 1$ is covered by a $\Sigma^0_1[B]$ class  $S$ with $\mu(S) < 1$.\\
+      Proof: Let $G = [\{\sigma: K^A(\sigma) \leq |\sigma| - 1\}]$. There is a $\Sigma^0_1[B]$ class $S$ such that $\mu(S) < 1$ and $G \subset S$ so $ii$ holds in the proposition above.This shows the backward direction.\\
+      For the forward  direction apply Lebesgue desntiy to $2^\omega - G$ to get $\sigma$ such that $\mu(H) \leq 1/2$ where $H = \{z : \sigma z \in G\}$. Let $H = [V]$ where $V$ is $A-$ c.e. and prefix free. Then the request set relative to $A$ : $\{<|\tau| - 1, \tau> : \tau \in V\}$ has weight $2 \times \mu(H) \leq 1$, so there is an oracle prefix -free machine $M$ such that $V = \{\tau: K_{M^A}(\tau) \leq |\tau| - 1\}$.  Hence there is a $\Sigma^0_1[B]$ class $\hat S$ such that $\mu(\hat S) < 1$ and $H = [V] \subset \hat S$. Let $S = \sigma \hat S \cup (2^\omega - [\sigma])$. Then $\mu(S) < 1$ and $G\subset S$.\\\\
+      \textbf{Theorem:} The following are equivalent: \\
+      $i) A \leq_{LR} B$ 
+      \\ $ii) $ Let $f:\omega \to \omega$ be computable. $\forall I$ which is $A-$ c.e. such that $\sum_{i\in I} 2^{-f(i)}< \infty$ there is a $B-$ c.e. set $J \supset I$ such that $\sum_{i \in J} 2^{-f(i)} < \infty$.\\
+      $iii) A \leq_{LK} B$.\\
+      Proof: $ii) \implies iii): $ Let $f(<d,\tau>) = d$ and let $I = \{<|\sigma|,\tau>: U^A(\sigma) = \tau\}$. So $I$ is $A-$ c.e. and $\sum_{<d,\tau>\in I}2^{-f(<d,\tau>)} = \sum_{<d,\tau> \in I} 2^{-d} = \mu[dom U^A] \leq 1$. Fix $J \supset I$ such that $J$ is $B-c.e.$ and $\sum_{<d,\tau> \in J} 2^{-f(<d,\tau>)} < \infty$, so this is a bounded request set relative to $B$ and so $\forall <d,\tau> \in J$ we have $K^B(\tau) \leq^+ d$ but $\forall \tau$ the pair $<K^A(\tau), \tau> \in I \subset J$ so $K^B(\tau) \leq^+ K^A(\tau)$.
+      \\ We already know $iii) \implies i)$.
+      \\\textbf{Lemma: } For a sequence $\{a_i\}$ with $a_i \in [0,1)$, $\sum_i a_i < \infty \iff \prod (1-a_i) > 0$.
     \end{document}
