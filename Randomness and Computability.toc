@@ -28,3 +28,5 @@
 \contentsline {section}{\numberline {19}Lecture 19}{21}{section.19}%
 \contentsline {subsection}{\numberline {19.1}Lowness and K - triviality}{21}{subsection.19.1}%
 \contentsline {section}{\numberline {20}Lecture 20}{23}{section.20}%
+\contentsline {section}{\numberline {21}Lecture 21}{24}{section.21}%
+\contentsline {section}{\numberline {22}Lecture 22}{25}{section.22}%
