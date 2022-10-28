@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  26 OCT 2022 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  28 OCT 2022 15:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -609,14 +609,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--457
 
 [23] [24] 
 AED: lastpage setting LastPage
-[25] (./Randomness and Computability.aux)
+[25] [26] (./Randomness and Computability.aux)
 Package rerunfilecheck Info: File `"Randomness and Computability".out' has not 
 changed.
 (rerunfilecheck)             Checksum: 99A30BA1092FC9B2776588123C415947;3897.
  ) 
 Here is how much of TeX's memory you used:
- 11603 strings out of 478994
- 168272 string characters out of 5858184
+ 11604 strings out of 478994
+ 168279 string characters out of 5858184
  499605 words of memory out of 5000000
  28858 multiletter control sequences out of 15000+600000
  411293 words of font info for 58 fonts, out of 8000000 for 9000
@@ -639,10 +639,10 @@ ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 21/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Randomness and Computability.pdf" (25 pages, 296576 bytes).
+Output written on "Randomness and Computability.pdf" (26 pages, 302637 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 311 compressed objects within 4 object streams
- 59 named destinations out of 1000 (max. 500000)
+ 363 PDF objects out of 1000 (max. 8388607)
+ 314 compressed objects within 4 object streams
+ 60 named destinations out of 1000 (max. 500000)
  257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
