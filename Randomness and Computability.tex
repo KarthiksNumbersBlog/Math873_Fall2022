@@ -498,4 +498,29 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
   iv) $A$ is a base for $1-$ randomness.\\
   v) $A$ is $K$ trivial (we won't see v $\implies$ i since its too hard)\\
   We have an alternate proof that ii $\implies$ i via iv.
+  \newpage
+  \section{Lecture 24}
+  \textbf{Fact:} There is a noncomputable $c.e.$ set low for $K$.\\
+  Proof: Let $\Omega = \Omega_0 \oplus \Omega_1$. Let $A \leq_T\Omega_0, \Omega_1$ be a simple set ($\{\Omega_0,\Omega_1\}$ is a null $\Pi^0_1$ class). Then $\Omega_0$ is $\Omega_1$ random, hence $A-$ random, So $A$ is a base for $1-$ randomness.\\
+  \textbf{Definition:} A cost function is a computable map: $c: \omega \times \omega \to \bb R_{\geq 0}$. We say $c$ satisfies the limit condition if $lim_{n \to \infty} sup_{s\geq n} c(n,s) = 0$.\\
+  We say $c(n,s) =$ cost of changing $A(n)$ at stage $s$.\\
+  Example: $c_K(n,s) = \sum_{n \leq m \leq s} 2^{-K_s(m)}$ satisfies the limit condition.\\
+  \textbf{Definition:} Let $\{A_s\}_s$ be a computable approximation to a $\Delta^0_2$ set $A$. We say $\{A_s\}_s$ obeys $c$ if $\sum \{c(x,s) : x\leq s, x$ is the least such that $A_{s-1}(x) \neq A_s(x)\} < \infty$ that is the total cost of the approximation is finite.\\
+  \textbf{Proposition:} If $A$ has an approximation $\{A_s\}_{s\in \omega}$ that obeys $c_K$, then $A$ is $k-$ trivial. It is also true that all $K-$ trivials have such an approximation (although this is hard to show and we won't see it here).\\
+  Proof: Consider the request set $R$ where at stage $s$ we put $<K_s(n),A_s|_n>$ into $R$ if $n \leq s$ and i) $K_s(n) < K_{s-1}(n)$ or ii)$A_{s-1}|_n \neq A_s|_n$. If $R$ is bounded then $A$ is $K-$ trivial.\\
+  Requests enumerated for $i)$ weight at most $\Omega \leq 1$. Assume $<K_s(n) , A_s|_n> $ is ennumerated for $ii)$ Let $x \leq n$ be leaset such that $A_{s-1}(x) \neq A_s(x)$. The cost $c(x,s) = \sum_{x\leq n\leq s} 2^{-K_s(n)}$ accounts for all $ii)$ requests at stage $s$. But $A$ obeys $c_K$ so $R$ is a bounded request set.\\
+  \textbf{Proposition:} If $c$ is a cost function satisfying the limit condition, then there is a promptly simple set $A$ obeying $C$.\\
+  Proof: Let $R_e$ be the requirement  $|W_e| = \infty \implies W_e \cap A \neq \emptyset$. Let $A_0 = \emptyset $.\\
+  At stage $s>0$ for each $e<s$ which hasn't been satisfied, if there is an $x > 2e$ with $x \in W_e$ and $c(x,s) \leq 2^{-e}$, then put the least such $x$ into $A_s$.\\
+  Note: $A$ is coinfinite and obeys $c$. If $x$ is sufficiently large, then $c(x,s) \leq 2^{-e} \forall s \geq x$, so each $R_e$ is satisfied.\\
+  \textbf{Corollary (Solovay)}: There is a noncomputable (simple) $K-$ trivial.\\
+  \textbf{Low for $K$ construction}. \\
+  Let $U$ be a universal prefix free oracle machine. If $A$ has $\Delta^0_2$ approximation $\{A_s\}_s$ let $C_{U,A}(x,s) = \sum\{ 2^{-|\sigma|}: U_{s-1}^{A_{s-1}}(\sigma)\downarrow, x < use U_{s-1}^{A_{s-1}}(\sigma)\}$. $C_{U,A}$ depends on the approximation to $A$, and is called an adaptive cost function. Does it have the limit condition?-Maybe\\
+  \textbf{Proposition:} If $A$ has an approximation $\{A_s\}_s$ that obeys $c_{U,A}$ then $A$ is low for $K$.\\
+  Proof: Consider the request set $R$ where at stage $s$ we put $<|\sigma|, \eta>$ into $R$ if $U^{A_s}_s(\sigma) \downarrow = \eta$ but $U_{s-1}^{A_{s-1}}$ does not converge to $\eta$. If $R$ is a bounded request set , then $A$ is low for $K$. Suppose a request $<|\sigma|, \eta>$ is put into $R$ at stage $s$ because $U^{A_s}_s(\sigma) = \eta$ with use $w$. \\
+  Case 1: $\forall t > s\;A_s|_w = A_t|_w$. Then we can charge the request against $\Omega^A<1$.\\
+  Case 2: $\exists t> s $ with $A_s|_w \neq A_t|_w$. Let $t$ be the least. Let $x < w$ be least such that $A_{t-1}(x) \neq A_t(x)$. Then $2^{-|\sigma|}$ can be charged against $c_{U,A}(x,t)$.
+  \newpage
+  \section{Lecture 25}
+  
     \end{document}
