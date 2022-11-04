@@ -522,5 +522,27 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
   Case 2: $\exists t> s $ with $A_s|_w \neq A_t|_w$. Let $t$ be the least. Let $x < w$ be least such that $A_{t-1}(x) \neq A_t(x)$. Then $2^{-|\sigma|}$ can be charged against $c_{U,A}(x,t)$.
   \newpage
   \section{Lecture 25}
+  Recall: $c_{U,A}(x,s) = \sum \{2^{-|\sigma|} : U_{s-1}^{A_{s-1}}(\sigma)\downarrow$ and $x < $ use $U_{s-1}^{A_{s-1}}\}$.\\
+  \textbf{Theorem:} There is a simple set that is low for $K$. \\
+  Proof: We have the simplicity requirements $R_e : |W_e| = \infty \implies W_e\cap A \neq \emptyset$. Starting with $A_0 = \emptyset$, at stage $s$ we wait to see if there is an $x\geq 2e, x \in W_e$ for each unsatisfied $R_e$ with $e \leq s$ and $c_{U,A}(x,s) \leq 2^{-e}$. Then put the least such $x$ into $A_s$. Note that $A$ is coinfinite and obeys $C_{U,A}$.
+   \\We claim that for any large enough $m$, we have $sup_{s> m} c_{U,A}(m,s) \leq 2^{-e}$, so $R_e$ is satisfied. This is because if $\sigma_0,...,\sigma_{k-1} \in dom U^A$ be such that if $\alpha = \sum_{i<k} 2^{-|\sigma_i|}$, then $\Omega^A - \alpha \leq 2^{-e-1}$. Choose $m \geq e+1$ such that all computations $U^{A_m}_m(\sigma_i)$ are stable and no $R_j$ for $j \leq e+1$ acts at any stage $\geq m$.\\
+   At each stage $s> m$ we have $\Omega_{s-1}^{A_{s-1}} - \Omega^A \leq 2^{-e-1}$ since the total weight of all computations that can be injured at stages $\geq m$ is $\sum_{j > e+1} 2^{-j}= 2^{-e-1}$. But note that $C_{U,A}(m,s) \leq \Omega_{s-1}^{A_{s-1}}- \alpha \leq 2^{-e}$ for some $s>m$ which is what was needed.\\
+   \textbf{Facts:} 
+   i)Every low for $K$ is low (we showed this), in fact super low: $A' \leq_{tt} 0'$.\\
+   ii) The low for $K$ degrees form an ideal as they are closed under $\leq_T$ and join (by passing through $K$ triviality).
+   \\ \textbf{Theorem:} If $A, B$ are $K$ trivials then so is $A \oplus B$. \\
+   Proof: Let $A,B$ be $K$ trivial with constant $b$. We can then fix $c$ such that $\forall n \; |\{\sigma \in 2^n: K(\sigma) \leq K(n)+b\}| < 2^{b+c}$. Consider a prefix free machine $M$ such that $M(\tau \gamma_1 \gamma_2)$ converges if $\tau \in dom(U)$ and $\gamma_1,\gamma_2 \in 2^{b+c}$. If $U(\tau) = n$, then $M$ looks for the $\gamma_{1^{st}}$ and $\gamma_{2^{nd}}$ strings $\sigma_1,\sigma_2$  of length $n$ with complexity $\leq |\tau| +b$. Then $M(\tau \gamma_1 \gamma_2) = \sigma_1 \oplus \sigma_2$. So $K(A \oplus B|_{2n}) \leq^+ K_M(A\oplus B|_{2n}) = K(2n) +2(b+c) \leq^+ K(2n)$. Odd lengths follow too.\\
+   
+  \textbf{Facts:}iii) Every $K$ trivial is $\leq_T$ a $c.e. K-$ trivial. \\
+  iv) Every $K-$ trivial (has an approximation that) satisfies $C_K$. \\
+  \textbf{Theorem:} Let $A$ be c.e., $X$ a Martin Lof random and $0' \not \leq_T A \oplus X$. Then $X$ is Martin Lof random with respect to $A$.
+   Proof: Let $\{U_n^Z\}$ be a universal oracle $ML$ test. Let $U_n^A[s] = U_{n,s}^{A_s}$. Observe that $\mu(U_n^A[s]) \leq 2^{-n}$. If $X$ is not $ML$ random in $A$, then $X \in U_n^A \forall n$. Let $f(n) = \mu s [X \in U_n^A[s]$ with use $\sigma \prec A]$. Note $X \in U_n^A[t] \forall t \geq f(n)$ and $f \leq_TA\oplus X$. Since $f \not \geq_T0'$ there are infinitely many $n$ such that $n \in 0' - 0'_{f(n)}$. So we take $S_n = U_n^A[t]$ if $n$ enters $0'$ at stage $t$ and $S_n = \emptyset$ otherwise. $\mu(S_n) \leq 2^{-n}$ and $\exists^\infty n \; X \in S_n$ so $X$ is not $ML$ random.\\
+   \textbf{Corollary:} Any $c.e.$ set $A$ that is computable from a $ML-$ random $X \not \geq_T 0'$ is low for $K$.\\
+   Proof: $X \oplus A \equiv_T X \not \geq_T 0' $ so $X$ is $ML-$ random with respect to $A$, so $A$ is a base for $1-$ randomness.\\
+   Fact: v) There is an $ML-$ random $X <_T 0'$ that computes all low for $K$ sets.
+   vi) $A$ is low for $K \iff \forall X\; X$ $ML-$ random and $X \not \geq_T 0' \implies A \oplus X \not \geq_T 0'$. 
+   \newpage
+   \section{Lecture 26}
+  
   
     \end{document}
