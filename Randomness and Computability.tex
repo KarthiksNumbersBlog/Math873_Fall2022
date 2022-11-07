@@ -540,9 +540,34 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    \textbf{Corollary:} Any $c.e.$ set $A$ that is computable from a $ML-$ random $X \not \geq_T 0'$ is low for $K$.\\
    Proof: $X \oplus A \equiv_T X \not \geq_T 0' $ so $X$ is $ML-$ random with respect to $A$, so $A$ is a base for $1-$ randomness.\\
    Fact: v) There is an $ML-$ random $X <_T 0'$ that computes all low for $K$ sets.
-   vi) $A$ is low for $K \iff \forall X\; X$ $ML-$ random and $X \not \geq_T 0' \implies A \oplus X \not \geq_T 0'$. 
+   vi) $A$ is low for $K \iff \forall X\; X$ $ML-$ random and $X \not \geq_T 0' \implies A \oplus X \not \geq_T 0'$.  
    \newpage
-   \section{Lecture 26}
-  
+   \section{Lecture 26- Hausdorff Dimension}
+   Not all measure zero sets are created equal. 
+   Idea: In dimension $n$, a ball of radius $r$ has volume about $r^n$. \\
+   \textbf{Definition:} A set $D$ is an $n-$ cover if $ \sigma \in D \implies |\sigma| \geq n$. $D$ covers $R \subset 2^\omega$ if $R \subset [D]$. Let $H_n^S(R) = inf \{\sum_{\sigma \in D} 2^{-s|\sigma|} : D$ is an $n-$ cover of $R \}$ - The sum in the $inf$ called $wt_s(D)$ is the  dimension $s$ weight of $D$.\\
+   Now the $s$ dimensional (outer) Hausdorff measure of $R$ is $H^S(R) = lim_{n \to \infty} H^S_n(R)$.\\
+   Note that for $s < 1$ we have $wt_s(\{\sigma 0 , \sigma 1\}) > wt_s(\{\sigma\})$.\\
+   \textbf{Proposition:} For all $R \subset2^\omega$, there is a $s \in [0,1]$ such that :\\
+   i) $H^t(R) = 0$ for all $t > s$ ii) $H^t(R) = \infty$ for all $t \in [0,s)$.\\
+   Proof: All we need to show is that if $H^S(R) < \infty$ and $d > 0$ then $H^{s+d}(R) = 0$. But for all $n$, $H_n^{std}(R) = inf \{\sum_{\sigma \in D} 2^{-(s+d)|\sigma|}: D$ is an $n$ cover of $R\} \leq $ $ inf \{\sum_{\sigma \in D} 2^{-d|\sigma|} 2^{-s |\sigma|}: D$ is an $n$ cover of $R\}$ = $2^{-dn} H^S_n(R)$.\\
+   So $H^{s+d}(R) = lim H_n^{s+d}(R) \leq lim 2^{-dn} H_n^s(R) = 0$.\\\\
+   \textbf{Definition:} The Hausdorff dimension of $R$ is $dim_H(R) = sup\{s: H^s(R) = \infty\} = inf \{s : H^s(R) = 0\}$.\\
+   Examples: i) $R = \{X \oplus \emptyset : X \in 2^\omega\}$ has $dim_H(R) = 1/2$ because you can find a $2n-$ cover  $D$ of $R$ with $2^n$ strings of length $2n$. $wt_{1/2}(D) = 2^n. 2^{-1/2 \times 2n} = 1$. \\
+   ii) Say $R$ is made up by restricting on odd blocks to be $000...0$ and anything goes on even blocks. If the growth rate of length of blocks is fast enough, then $dim_H(R) = 0$. 
+   \\
+   Facts: i) $H^1(X)$ is the outer Lebesgue measure\\
+   ii) If $\mu(X) \neq 0 $ then $dim(X) = 1$.\\
+   iii) If $X \subset  Y$, then $di(X) \leq dim(Y)$.\\
+   iv) dim$(\cup_i Y_i) = sup ( dim(Y_i))$.\\
+   \textbf{Proposition:} $H^s(R) = 0 \iff \forall \epsilon>0$ there is a cover $D$ of $R$ such that $wt_s(D) < \epsilon$.
+   \subsection{$s-$ Randomness }
+   Let $s$ be a computable real between $0,1$. \\
+   \textbf{Definition:} i) An $s-ML$ test is a computable sequence $\{V_k\}_{k \in \omega}$ of c.e. sets of strings such that $wt_s(V_k) \leq 2^{-k}$. \\
+   ii) We call $X \in 2^\omega$ $(ML) s-$ random if $X \not \in \cap V_k$ for all $s-$ ML tests.
+   \\Fact: There is a universal $s-$ ML test. \\
+   \textbf{Definition:} The effective Hausdorff dimension of $X \in 2^\omega$, $dim(X) = sup \{s : X $ is $s-$ random $\}$.\\
+   \textbf{Proposition-The point to set principle}: Let $R \subset 2^\omega$. \\ $dim_H(R) = min_{z \in 2^\omega} sup_{X \in R} dim^Z(X)$.
+   
   
     \end{document}

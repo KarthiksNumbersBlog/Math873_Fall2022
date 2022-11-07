@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  4 NOV 2022 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  7 NOV 2022 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -621,18 +621,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 525--535
 
  []
 
-[28] 
+[28]
+Overfull \hbox (11.57802pt too wide) in paragraph at lines 546--564
+\OT1/cmr/m/n/10 Now the $\OML/cmm/m/it/10 s$ \OT1/cmr/m/n/10 di-men-sional (out
+er) Haus-dorff mea-sure of $\OML/cmm/m/it/10 R$ \OT1/cmr/m/n/10 is $\OML/cmm/m/
+it/10 H[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/1
+0 lim[]H[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 )$. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--564
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 564.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 564.
+
+
 AED: lastpage setting LastPage
 [29] (./Randomness and Computability.aux)
 Package rerunfilecheck Info: File `"Randomness and Computability".out' has not 
 changed.
-(rerunfilecheck)             Checksum: 2E977429613B2EE852889F0AE969262B;4289.
+(rerunfilecheck)             Checksum: F20B6B3E72EB2E19DF4554FB1614B728;4536.
  ) 
 Here is how much of TeX's memory you used:
- 11615 strings out of 478994
- 168388 string characters out of 5858184
- 499605 words of memory out of 5000000
- 28862 multiletter control sequences out of 15000+600000
+ 11617 strings out of 478994
+ 168420 string characters out of 5858184
+ 499613 words of memory out of 5000000
+ 28863 multiletter control sequences out of 15000+600000
  411293 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,6n,74p,1254b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -653,10 +674,10 @@ ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 21/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Randomness and Computability.pdf" (29 pages, 320383 bytes).
+Output written on "Randomness and Computability.pdf" (29 pages, 326777 bytes).
 PDF statistics:
- 397 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
- 67 named destinations out of 1000 (max. 500000)
- 289 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 350 compressed objects within 4 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 
