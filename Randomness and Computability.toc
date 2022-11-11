@@ -35,3 +35,6 @@
 \contentsline {section}{\numberline {25}Lecture 25}{28}{section.25}%
 \contentsline {section}{\numberline {26}Lecture 26- Hausdorff Dimension}{29}{section.26}%
 \contentsline {subsection}{\numberline {26.1}$s-$ Randomness }{29}{subsection.26.1}%
+\contentsline {section}{\numberline {27}Lecture 27}{30}{section.27}%
+\contentsline {section}{\numberline {28}Lecture 28}{31}{section.28}%
+\contentsline {subsection}{\numberline {28.1}Conditional Complexity}{31}{subsection.28.1}%

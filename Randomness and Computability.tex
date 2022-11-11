@@ -569,5 +569,47 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    \textbf{Definition:} The effective Hausdorff dimension of $X \in 2^\omega$, $dim(X) = sup \{s : X $ is $s-$ random $\}$.\\
    \textbf{Proposition-The point to set principle}: Let $R \subset 2^\omega$. \\ $dim_H(R) = min_{z \in 2^\omega} sup_{X \in R} dim^Z(X)$.
    
-  
+  \section{Lecture 27}
+  Proof of the point to set principle: For $\leq$, let $dim^Z(X) < s$ for some rational $s$ and all $X \in R$. Then the universal $s-ML$ test relative to $Z$ covers $R$, so $dim_H(R) \leq sup_{X \in R} dim^Z(X)$.\\
+  For the other direction - $\geq$ : Take $Z$ to code for every rational $s > dim_H(R)$ a sequence $\{V_k^s\}_{k \in \omega}$ of covers of $R$ such that $\forall n  \; wt_s(V^s_n) \leq 2^{-n}$. So $sup_{X \in R} dim^Z(X) \leq dim_H(R)$.\\
+  Goals: \\
+  \textbf{Theorem:} $\exists X \in 2^\omega$ $dim(X) = 1/2$ and if $Y \leq_TX$ then $dim(Y) \leq 1/2$.\\
+  \textbf{Theorem (P Lutz, Joe)} Under $CH$ there is an $E \subset 2^\omega$ such that \\i) $dim_H(E) = 1/2$, in fact $E$ is not $\sigma$ finite in dim $1/2$.\\
+  ii) $f : \omega \to \omega$ is a continuous function, then $dimH(f(E)) \leq 1/2$. \\
+  There is an analogy between effective ($dim$) and classical ($dim_H$)here. (add oracles). $f: 2^\omega \to 2^\omega$ computable to $f$ continuous. \\
+  $X\leq_{tt} Y$ is defined as there being a total computable $f$ such that $f(Y) = X$. $X \leq_T Y \iff $ there is a partial computable $f(Y) = X$.\\\\
+  \textbf{Theorem:} $X$ is $s-$ random $\iff K(X|_n) \geq^+ sn$.\\
+  Proof: (forward direction) Let $V_k = \{\sigma: K(\sigma) \leq s|\sigma| - k\}$. So $wt_s(V_k) = \sum_{\sigma \in V_k} 2^{-s|\sigma|} \leq \sum_{\sigma \in V_k} 2^{-K(\sigma)-k} \leq \sum_{\sigma \in 2^{<\omega}} 2^{-K(\sigma) - k} = 2^{-k} \Omega \leq 2^{-k}$. So $\{V_k\}_{k \in \omega}$ is an $s-$ ML test hence $X \not \in [V_k]$ for some $k$ so $\forall n K(X|_n) > sn-k$.\\
+  (backward direction): Suppose $X$ is not $s$ randomd. Let $\{V_k\}_{k \in \omega}$ be an $s-$ ML test covering $X$. Build a bounded request set $L$ by putting $<s|\sigma| -k,\sigma> $ into $L$ $\forall k$ and $\sigma \in V_{2k}$. 
+  $\sum_{<d,\sigma> \in L} 2^{-d} = \sum_k \sum_{\sigma \in V_{2k}} 2^{-s|\sigma|+k} = \sum_k wt_s(V_{2k})2^k \leq \sum_k 2^{-2k}2^k = 2 < \infty$. Hence $\forall k \exists n K(X|_n) \leq^+ sn -k$ where the $\leq^+$ comes from the coding constant for $L$.\\
+  \textbf{Corollary:} $dim(X) = liminf_n K(X|_n) / n$. \\
+  Proof: ($\leq$) If the lim inf $< s$ for $s$ rational then $X$ is not $s-$ random by the theorem above. So $dim(X) \leq s$.\\
+  ($\geq$) If $lim inf > t$ for $t$ rational. Then $K(X|_n) \geq^+ tn$, so $X$ is $t-$ random. Thus $dim(X) \geq t$. \\
+  Recall: $K(\sigma) = C(\sigma) + O(log|\sigma|) = KM(\sigma) + O(log |\sigma|)$, so $dim(X)$ could be defined as $lim inf$ of $C$ or $KM$ too.\\
+  \\
+  \textbf{Example}: For $R,S \subset 2^\omega$, $dim_H(R) + dim_H(S) \leq dim_H(R\times S)$, where $R\times S \subset 2^\omega \times 2^\omega$. Let $\sigma,\tau \in 2^n$ let $wt_s(\{(\sigma,\tau)\}) = 2^{-sn}$. Define the Hausdorff measure/dimension in $2^\omega \times 2^\omega $ accordingly. Note that $wt_{s/2} (\sigma \oplus \tau) = 2^{s/2(2n)} = 2^{-sn}$. So the map $\oplus: 2^\omega \to 2^\omega \to 2^\omega$ given by $(X,Y) \to X \oplus Y$ exactly halves dimension.\\
+  So we can restate the example as for $R,S \subset 2^\omega$, $dim_H(R) + dim_H(S) \leq 2 dim_H(R \oplus S)$.
+  \newpage
+  \section{Lecture 28}
+  \subsection{Conditional Complexity}
+  \textbf{Definition:} A partial function $M:2^{<\omega}\times 2^{<\omega} \to 2^{<\omega}$ is prefix free if $\forall y \{x : M(x,y)\downarrow\}$ is prefix free.\\
+  There is an effective list $\{M_n^2\}_{n \in \omega}$ of prefix free machines of the form above.\\
+  \textbf{Definition:} Let $U^2(0^n1\tau,y) = M^2_n(\tau, y)$. This is universal.
+  Let $K(\sigma| y) = min \{|\tau|: U^2(\tau,y) = \sigma\}$ which is the complexity of $\sigma$ given $y$. \\
+  Facts: i) $K(\sigma 1 \emptyset) =^+ K(\sigma)$. In fact for any $y$ we have $K(\sigma | y ) =^+ K(\sigma)$ but the constant depends on $y$.\\
+  ii) $\exists c \forall \sigma,y K(\sigma|y) \leq K(\sigma)+ c$.\\
+  iii) $K(x|y) \leq^+ K(x|z) + K(z|y)$.\\
+  \textbf{Definition}: If $t =\mu s [K_s(\sigma) = K(\sigma)]$, let $\sigma^*$ be the left most string such that $|\sigma^*| = K(\sigma)$ and $U_t(\sigma^*) \downarrow = \sigma$ - first discovered minimal program for $\sigma$.\\
+  Facts: i) If we fix a partial computable $N:2^{<\omega} \to 2^{<\omega}$ then $\forall y,z $  we have $N(z)\downarrow \implies K(y|z) \leq^+ K(y|N(z))$. The constant here depends on $N$.\\
+  ii) $K(y|x^*) = K(y|<x,K(x)>)$ since we can compute $<x,K(x)>$ from $x$ and vice versa.\\
+  \textbf{Theorem:} $K(x,y):= K(<x,y>) =^+ K(x) + K(y|x^*)$ \\
+  For $\leq^+$ consider the prefix free machine $M$ such that $M(\sigma \tau) \downarrow \iff \sigma \in dom(U)$ and $\tau \in dom U^2(.|\sigma)$. Let $M(\sigma \tau) = < U(\sigma), U^2(\tau,\sigma)>$. Let $\tau$ be a minimal $U^2(.,x^*)$ program for $y$. Then $M(x^*\tau) = <x,y>$ and $|x^*\tau | = K(x) + K(y|x^*)$.\\
+  For $\geq^+$ we prove $K(y|x^*) \leq^+ K(x,y) - K(x) $. Define $G(\sigma) = x$ whenever $U(\sigma) = <x,y>$ for some $y$. Recall that $f(x) = 2^{-K(x)}$ is maximal upto $\geq^*$ among left c.e. functions $f: 2^{<\omega} \to \bb R_{\geq0}$ such that $\sum f(\sigma) < \infty$.
+  \\ So there is a $c$ such that $\forall x\;$ we have $2^c 2^{-K(x)} > \bb P_G(x)$ - probability that $G$ outputs $x$ = $\sum_{G(\sigma)= x} 2^{-|\sigma|}$.
+  \\Define the bounded rqeuest set $L_\sigma$ as : If $U(\sigma) \downarrow = x$ and $U(\rho) \downarrow = <x,y>$ then put $<|\rho| - |\sigma| + c, y> $ into $L_\sigma$ but only up to total weight $1$ for $L_\sigma$. $L_\sigma$ has weight at most $1$.\\
+  Let $M_\sigma$ be the prefix free machine for $L_\sigma$. Let $N(\gamma ,\sigma) = M_\sigma(\gamma)$. Note $N$ is prefix free. \\
+  If $\sigma = x^*$ then $2^c2^{-|\sigma|} > \bb P_G(x) = \sum \{2^{-|\rho|}: \exists y U(\rho) = <x,y>\}$. But the total weight we want to put into $L_\sigma$ is $P_G(x) 2^{|\sigma|-c}<1$. So $L_\sigma$ is unconstrainted and $K(y|x^*) \leq^+ K_N(y|x^*) = K_N(y|\sigma) \leq K(x,y) - K(x) + c$.\\\\
+  \textbf{Theorem:} $R, S \subset 2^\omega$ we have$dim_H(R) + dim_H(S) \leq 2 dim_H(R \oplus S)$.
+  Proof: Assume $dim_H(R) = r, dim_H(S) = s$. Fix $Z$ and let $\epsilon > 0$. We want to prove that there is an $X \oplus Y \in R \oplus S$ such that $dim^Z(X \oplus Y) \geq 1/2 (r+s) - \epsilon $.\\
+  Take $x \in R$ such that $dim^Z(X) \geq r-\epsilon $. Let $Y \in S$ be such that $dim^{Z \oplus X}(Y) \geq s-\epsilon$. We want $K^Z(X \oplus Y |_{2n}) \geq^+ K^Z(X|_n) + K^{Z\oplus X}(Y|_n) - O(log(n))$.
     \end{document}
