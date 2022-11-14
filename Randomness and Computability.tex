@@ -611,5 +611,29 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
   If $\sigma = x^*$ then $2^c2^{-|\sigma|} > \bb P_G(x) = \sum \{2^{-|\rho|}: \exists y U(\rho) = <x,y>\}$. But the total weight we want to put into $L_\sigma$ is $P_G(x) 2^{|\sigma|-c}<1$. So $L_\sigma$ is unconstrainted and $K(y|x^*) \leq^+ K_N(y|x^*) = K_N(y|\sigma) \leq K(x,y) - K(x) + c$.\\\\
   \textbf{Theorem:} $R, S \subset 2^\omega$ we have$dim_H(R) + dim_H(S) \leq 2 dim_H(R \oplus S)$.
   Proof: Assume $dim_H(R) = r, dim_H(S) = s$. Fix $Z$ and let $\epsilon > 0$. We want to prove that there is an $X \oplus Y \in R \oplus S$ such that $dim^Z(X \oplus Y) \geq 1/2 (r+s) - \epsilon $.\\
-  Take $x \in R$ such that $dim^Z(X) \geq r-\epsilon $. Let $Y \in S$ be such that $dim^{Z \oplus X}(Y) \geq s-\epsilon$. We want $K^Z(X \oplus Y |_{2n}) \geq^+ K^Z(X|_n) + K^{Z\oplus X}(Y|_n) - O(log(n))$.
+  Take $x \in R$ such that $dim^Z(X) \geq r-\epsilon $. Let $Y \in S$ be such that $dim^{Z \oplus X}(Y) \geq s-\epsilon$. We want $K^Z(X \oplus Y |_{2n}) \geq^+ K^Z(X|_n) + K^{Z\oplus X}(Y|_n) - O(log(n))$. \newpage 
+  \section{Lecture 29}
+  Last time we were showing $R, S \subset 2^\omega \implies dim_H(R) + dim_H(S) \leq 2 dim_H(R\oplus S)$.\\
+  Proof: Assume $dim_H(R) = r$ and $dim_H(S) = s$. Fix $Z$ and let $\epsilon > 0$. We want to prove that there is an $X \oplus Y \in R\oplus S$ such that $dim^Z(X \oplus Y) \geq r+s/2 - \epsilon$.\\
+  Take $X \in R$ such that $dim^Z(X) \geq r- \epsilon$ and $Y \in S$ with $dim^{Z \oplus X}(Y) \geq s-\epsilon.$\\
+  Note that $K^{Z \oplus X}(Y|_n) \leq^+ K^Z(n) + K^Z(K^Z(X|_n)) + X^Z(Y|_n \; | (X|_n)^*) \leq^+ O(log n) + K^Z(Y|_n | (X|_n)^*)$. So $K^Z(X \oplus Y |_{2n}) =^+ K^Z(X|_n,Y|_n) =^+ K^Z(X|_n) + K^Z(Y|_n| (X|_n)^*) \geq^+ K^Z(X|_n) + K^{Z \oplus X} (Y|_n) - O(log\; n)$.
+  \\ Hence $dim^Z(X \oplus Y) = lim inf K^Z( X \oplus Y |_{2n})/2n \geq 1/2 lim inf (K^Z(X|_n) + K^{Z \oplus X}(Y|_n))/n \geq 1/2((r- \epsilon ) + (s-\epsilon)) = 1/2(r+s) - \epsilon$.\\
+  \\
+  Let $I_0 = [0,1)\cap \omega$ and $I_n = [n!, (n+1)!) \cap \omega$ for $n > 0$.
+  Note that $|I_n| = n.n! = n.\sum_{i<n} |I_i|$. Let $R = \{ X \in 2^\omega: \forall n \; X$ is zero on even intervals $I_{2n}\}$ and $S= \{X \in 2^\omega : \forall n \; X$ is all zero on odd intervals $I_{2n+1}\}$. If $X \in R$, then $K(X|_{(2n+1)!})/(2n+1)! < (2n)!/(2n+1)! = 1/(2n+1)$ where the $<$ is ignoring $O(log (n))$. \\
+  So $dim(X ) = 0$ and $dim_H(R) = 0$. Similarly $dim_H(S) = 0$. \\
+  Claim: $dim_H(R \oplus S) = 1/2$.\\
+  Easy to see that $dim_H(R \oplus S) \leq 1/2$. Now fix $Z$ and let $X$ be $ML$ random with respect to $Z$. Define $X_0,X_1$ by $X_0(m) = X(m)$ if $m \in I_n$ where $n$ is odd and $0$ otherwise and $X_1(m) = X(m)$ if $m \in I_n$ where $n$ is even and $0$ otherwise. \\
+  We can uniformly compute $X|_n$ from $X_0 \oplus X_1 |_{2n}$ and vice versa.\\
+  So $K^Z(X_0 \oplus X_1 |_{2n}) =^+ K^Z(X|_n) \geq^+ n$. So $dim^Z(X_0 \oplus X_1) \geq 1/2$ and so $Z$ was arbitrary. So $dim_H(R\oplus S) \geq 1/2$.
+  \subsection{Strong $s-$ randomness and supermartingales}
+  \textbf{Definition:} If $V \subset 2^{<\omega}$ then $ pfwt_s(V) = sup \{wt_s(S) : S \subset V $ prefix free $\}$. $pfwt-$ stands for prefix free $s$ weight of $V$.\\
+  Note that $pfwt_s(V) \leq wt_s(V)$.
+  \\ A strong $s-ML$ test is a computable sequence $\{V_k\}_{k \in \omega}$ of $c.e.$ sets of strings such that $\forall k pfwt_s(V_k) \leq 2^{-k}$. \\
+  $X$ is strong $s-$ random if $X \not \in \cap [V_k]$ for every strong $s-$ ML test $\{V_k\}$.
+  Note: strong $s-$ random $\implies  s-$ random.\\
+  \textbf{Definition:} We say that a $(super)$ martingale $d$ $s-$ succeeds on $X \in 2^\omega$ if $limsup_{n \to \infty} d(X|_n)/2^{(1-s)n} = \infty$.\\
+  \textbf{Theorem:} For $s$ computable with $0 < s < 1$ then $X$ is strongly $s-$ random $\iff $ no $c.e.$ martingale $s-$ succeeds  on $X$.\\\\
+  Let $d$ be an optimal supermartingale. The a priori complexity $KM(\sigma) = n - log_2(d(\sigma))$.\\
+  \textbf{Proposition:} $X$ is strongly $s-$ random $\iff KM(X|_n) \geq^+ sn$.
     \end{document}
