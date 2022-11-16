@@ -636,4 +636,25 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
   \textbf{Theorem:} For $s$ computable with $0 < s < 1$ then $X$ is strongly $s-$ random $\iff $ no $c.e.$ martingale $s-$ succeeds  on $X$.\\\\
   Let $d$ be an optimal supermartingale. The a priori complexity $KM(\sigma) = n - log_2(d(\sigma))$.\\
   \textbf{Proposition:} $X$ is strongly $s-$ random $\iff KM(X|_n) \geq^+ sn$.
+  \newpage
+  \section{Lecture 30}
+  \textbf{Example}: If $dim_H(R\times S) \geq 1+s$ then $dim_H(R), dim_H(S) \geq s$ and $2dim_H(R \oplus S) \geq 1+s$.\\
+  Proof: Assume $dim_H(R) < s $ say $dim_H(R) <s- \epsilon$. Fix $Z$ such that $\forall X \in R \; dim^Z(X) < s - \epsilon$. \\
+  So $\forall X \in R \exists^\infty n K^Z(X|_n) < (s-\epsilon) n $. Fix $X \oplus Y \in R \oplus S$. Then $\exists^\infty n K^Z(X \oplus Y |_{2n}) =^+ K^Z(X|_n,Y|_n) \leq^+ K^Z(X|_n) + K^Z(Y|_n) \leq^+ (s-\epsilon) n + n + O(log n)$.\\
+  So $dim^Z(X \oplus Y) \leq (1+s - \epsilon) / 2$. So $dim_H(R \oplus S) \leq (1+s-\epsilon)/2$.\\
+  Last time we defined strong $s-$ random and the notion of a supermartingale $s-$ succeeding on a sequence $X \in 2^\omega$. We will now prove the theorem stated in last class.\\
+  \textbf{Theorem:} For $s$ computable with $0 < s < 1$ then $X$ is strongly $s-$ random $\iff $ no $c.e.$ (super)martingale $s-$ succeeds  on $X$.\\
+  Proof: Suppose $d$ is an $s-$ successful c.e supermartingale. Assume $d(\phi) \leq 1$. Let $V_k = \{\sigma \in 2^{<\omega}: d(\sigma) > 2^k 2^{(1-s)|\sigma|}\}$. So $X \in \cap [V_k]$. Let $S \subset V_k$ be prefix free. Then $1 \geq d(\phi) \geq \sum_{\sigma \in S} 2^{-|\sigma|}d(\sigma) \geq \sum_{\sigma \in S} 2^k 2^{s|\sigma|} = 2^k wt_s(S)$.  So $wt_s(S) \leq 2^{-k}$ and so $pfwt_s(V_k) \leq 2^{-k}$ and $\{V_k\}_k$ is a strong $s-$ ML test.
+  For the other direction let $\{V_k\}_{k \in \omega}$ be a strong $s-$ ML test covering $X$. Let $d(\sigma)= 2^{|\sigma|} \sum_{k\in \omega} k . pfwt_s(V_k\cap [\sigma]^\prec)$ where $[\sigma]^\prec$ is the set of finite extensions of $\sigma$. Note $d(\phi) = \sum_{k \in \omega} k 2^{-k} < \infty$ and $d$ has the supermartingale property because for any $V \subset 2^{<\omega}$ and any $\sigma$ the $pfwt_s(V\cap [\sigma]^\prec) \geq pfwt_s(V \cap [\sigma 0]^\prec)+ pfwt_s(V\cap[\sigma1]^\prec)$.\\
+  If $\sigma \in V_k$ then $d(\sigma) \geq k 2^{|\sigma|} 2^{-s | \sigma|} = k 2^{(1-s)|\sigma|}$ so $d$ $s-$ succeeds on $X$. \\
+  \\
+  Recall: The a priori complexity $KM(\sigma) = |\sigma| -log_2(d(\sigma))$ where $d$ is an optimal supermartingale.  \\
+  \textbf{Proposition:} $X$ is strongly $s-$ random $\iff KM(X|_n) \geq^+ sn$.
+  \\Proof: We just unwind definitions:\\ $KM(X|_n) \geq^+ sn \iff -log_2(d(X|_n)) \geq^+ sn-n \iff d(\sigma) \leq^* 2^{(1-s)n} \iff limsup \;d(X|_n)/2^{(1-s)n}< \infty$.\\
+  \textbf{Theorem:} If $s< t$ and $X \in 2^\omega$ is $t-$ random then it is strongly $s- $ random.
+  \\ \textbf{Corollary:} $dim(X) = sup\{s : X $ is $s-$ random $\} = sup \{s: X$ is strongly $s-$ random $\} = inf \{s : X$ is not strongly $s-$ random $\}$.\\
+  Proof of theorem: For a given $s,t$ there is a $c$ such that if $A \subset 2^{<\omega}$ then $wt_t(A) \leq c \times pfwt_s(A)$ since $wt_t(A)  = \sum_{\sigma \in A} 2^{-t |\sigma| } = \sum_{n \in \omega} \sum_{\sigma \in A\cap 2^n} 2^{-tn} = \sum_{n \in \omega} 2^{-(t-s)n}\sum_{\sigma \in A \cap 2^n} 2^{-sn} \leq \sum_{n \in \omega} 2^{-(t-s)n} pfwt_s(A) = c pfwt_s(A)$ where $c = \sum_{n \in \omega} 2^{-(t-s)n} < \infty$ since its a geometric series. So an appropriate tail of any strong $s-$ ML test is a $t-$ ML test.\\\\
+  Fact: $X $ strong $s-$ random $\implies K(X|_n) - sn \to \infty  \implies K(X|_n ) \geq^+ sn$ but the converses are not true. \\
+  \textbf{Definition:} optimal $s-$ weight $opwt_s(S) = inf \{wt_s(V) : [S]\subset [V]\}$.\\
+  We get the same randomness notion for this as we did for $pfwt_s$.
     \end{document}
