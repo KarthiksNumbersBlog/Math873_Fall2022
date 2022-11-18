@@ -657,4 +657,22 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
   Fact: $X $ strong $s-$ random $\implies K(X|_n) - sn \to \infty  \implies K(X|_n ) \geq^+ sn$ but the converses are not true. \\
   \textbf{Definition:} optimal $s-$ weight $opwt_s(S) = inf \{wt_s(V) : [S]\subset [V]\}$.\\
   We get the same randomness notion for this as we did for $pfwt_s$.
+  \newpage
+  \section{Lecture 31}
+  \textbf{Definition:} $opwt_s(S) = inf \{wt_s(V) : [S] \subset [V]\}$.
+  \\ Note that $opwt_s(S) \leq 1$, essentially this is the cost of compressing some initial segment of every $X \in [S]$ to $s. length$.\\
+  Fix $s< 1$, assume $S\subset 2^{<\omega}$ is finite. \\
+  Claim: If $[S] = [V]$ and $\tau \in V$ is incomparable with every $\sigma \in S$ or properly extends some $\sigma\in S$ then we can do better than this $V$, i.e. there is a $\hat V $ with no such $\tau$ and $[S] \subset [\hat  V]$ and $wt_s(\hat V )< wt_s(V)$. So for finite $S$ we only need to consider finitely many $V$ in the definition of $opwt_s(S)$. \\
+  \textbf{Definition:} The optimal cover of $S \subset 2^{<\omega}$ is a set $S^{OC}\subset 2^{<\omega}$, and $[S] \subset [S^{OC}]$ and $wt_s(S^{OC}) = opwt_s(S)$ and $[S^{OC}]$ has minimal measure among candidates. \\
+  \textbf{Facts:} $S^{OC}$ if they exist must be prefix free. \\For finite $S$, $S^{OC}$ exists and is unique. (induction over length of longest string in $S$).
+  $S^{OC}$ and $opwt_s(S)$ are computable from $S$.\\
+  Example: $s=1/2$ and $S = \{00,11\}$, then $wt_s(S) = 1$ and $S^{OC} = S$ and not $\{\emptyset\}$ but for $S = \{0,11\}$ we get $S^{OC} = \{\emptyset\}$.\\
+  What if $S$ is infinite? Let $S = \cup S_t$ where $S_0 \subset S_1 ...$ are all finite. If $\sigma \in S_t^{OC}$ then either $\sigma \in S^{OC}_{t+1}$ or some $\tau \prec \sigma$ is in $S^{OC}_{t+1}$. Therefore $[S_t^{OC}] \subset [S_{t+1}^{OC}]$ and $lim S_t^{OC} = \hat S$ exists (pointwise limit) and $S^{OC} = \hat {S}$ and is unique.\\
+  \textbf{Proposition:} If $S$ is c.e. then $S^{OC}$ is $\Delta^0_2$ (dce), $[S^{OC}]$ is a $\Sigma^0_1$ class and $opwt_s(S)$ is left $c.e.$.\\
+  \textbf{Definition: (Kjor-Hanssen)} $X$ is vehemently $s-$ random if for every computable sequence of $c.e.$ sets $\{V_k\}_{k \in \omega}$ with $opwt_s(V_k) \leq 2^{-k} \forall k$, $X \not \in \cap [V_k]$.
+  Observe that $opwt_s(S) \leq pfwt_s(S)$ so every strong $s$ test is also a vehement $s-$ test and $Vehement \implies strong$.\\
+  \textbf{Lemma:} For any $c.e.$ set $S \subset 2^{< \omega}$ we can effectively find a $c.e.$ $V \subset 2^{< \omega}$ such that $[V] = [S^{OC}]$ and if $P \subset V$ is prefix free, $wt_s(P) \leq opwt_s(S)$. \\
+  \textbf{Corollary:} $X$ is strong $s-$ random $\iff X$ is vehemently $s-$ random. \\
+  Proof of lemma: Let $\{S_t\}_{t \in \omega}$ be an enumeratino of $S$. Let $V = \cup S_t^{OC}$. Note that $V$ is c.e. and $[V] = [S^{OC}]$. If there is a prefix free $P \subset V$ with $wt_s(P) > opwt_s(S)$ then this would be true of a finite $P' \subset P$.\\
+   Assume $P \subset V$ is finite and prefix free. If $\tau \in V$ then we will show that $wt_s(P \cap [\tau]^\prec) \leq wt_s(\{\tau\})$. We prove this by induction on the distance $k$ from $\tau$ to its longest extension  in $P$. Its trivial if $P \cap [\tau]^\prec = \emptyset$. $k=0$ is immediate. If $k>0$ there is a unique $t$ such that $\tau \in S^{OC}_{t+1} - S_t^{OC}.$ Note that $wt_s(S_t^{OC})\cap [\tau]^\prec )\leq wt_s(\{\tau\})$ or else we would have $\tau \in S_t^{OC}$.  Also every element of $P \cap [\tau]^\prec$ must have entered $V$ by stage $t$. Moreover every element of $P \cap [\tau]^\prec$ extends an element of $S_t^{OC} \cap [\tau]^\prec$. Apply the inductive hypothesis to every element of $S_t^{OC} \cap [\tau]^\prec$. So $wt_s(P \cap [\tau]^\prec) \leq wt_s(S_t^{OC}\cap [\tau]^\prec))$. Again every element of $P$ extends some element of $S^{OC}$ so $wt_s(P) \leq wt_s(S^{OC}) = opwt_s(S)$. 
     \end{document}
