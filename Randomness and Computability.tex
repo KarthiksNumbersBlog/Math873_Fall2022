@@ -675,4 +675,26 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
   \textbf{Corollary:} $X$ is strong $s-$ random $\iff X$ is vehemently $s-$ random. \\
   Proof of lemma: Let $\{S_t\}_{t \in \omega}$ be an enumeratino of $S$. Let $V = \cup S_t^{OC}$. Note that $V$ is c.e. and $[V] = [S^{OC}]$. If there is a prefix free $P \subset V$ with $wt_s(P) > opwt_s(S)$ then this would be true of a finite $P' \subset P$.\\
    Assume $P \subset V$ is finite and prefix free. If $\tau \in V$ then we will show that $wt_s(P \cap [\tau]^\prec) \leq wt_s(\{\tau\})$. We prove this by induction on the distance $k$ from $\tau$ to its longest extension  in $P$. Its trivial if $P \cap [\tau]^\prec = \emptyset$. $k=0$ is immediate. If $k>0$ there is a unique $t$ such that $\tau \in S^{OC}_{t+1} - S_t^{OC}.$ Note that $wt_s(S_t^{OC})\cap [\tau]^\prec )\leq wt_s(\{\tau\})$ or else we would have $\tau \in S_t^{OC}$.  Also every element of $P \cap [\tau]^\prec$ must have entered $V$ by stage $t$. Moreover every element of $P \cap [\tau]^\prec$ extends an element of $S_t^{OC} \cap [\tau]^\prec$. Apply the inductive hypothesis to every element of $S_t^{OC} \cap [\tau]^\prec$. So $wt_s(P \cap [\tau]^\prec) \leq wt_s(S_t^{OC}\cap [\tau]^\prec))$. Again every element of $P$ extends some element of $S^{OC}$ so $wt_s(P) \leq wt_s(S^{OC}) = opwt_s(S)$. 
+   \newpage
+   \section{Lecture 32}
+   Fact: $opwt_s(S) \leq wt_s( $ minimal strings in $S) \leq pfwt_s(S)$.\\
+   Fact: Forall $S \subset 2^{<\omega}, S^{OC}$ is unique 
+   \subsection{Solovay $s-$ randomness}
+   \textbf{Definition:} $V \subset 2^{< \omega},$ $V$ c.e. is a Solovay $s-$ test if $wt_s(V) < \infty$. $X \in 2^\omega$ fails $V$ if $\exists^\infty n X|_n \in V$.\\
+   $X$ is Solovay $s-$ random if it passes all Solovay $s-$ tests.
+   \\ \textbf{Theorem:} $X$ is Solovay $s$ random $\iff  lim K(X|_n) - sn = \infty$.\\
+   Proof: Let $V_b = \{\sigma \in 2^{<\omega}: K(\sigma) < s |\sigma| + b\}$. Then $wt_s(V_b) = \sum_{\sigma \in V_b} 2^{-s|\sigma|} < \sum_{\sigma \in V_b} 2^{-K(\sigma) + b} \leq 2^b$. If $lim inf K(X|_n) - sn \leq b$ for some $b$, then $X$ fails $V_b$ and so is not Solovay $s$ random.\\
+   For the other direction let $V$ be a Solovay $s$ test with weight $wt_s(V) < \infty$. Then $\{ <s|\sigma|,\sigma> : \sigma \in V\}$ is a bounded request set. So if $X$ is covered by $V$ then $lim inf K(X|_n) - sn < \infty$.\\
+   \\\textbf{Corollary:} Solovay $s-$ random $\implies s-$ random.\\
+   \textbf{Theorem:} Strong $s-$ random $\implies $ Solovay $s-$ random.\\
+   Proof: Take $V \subset 2^{<\omega}$ such that $wt_s(V) \leq 2^b$. Let $U_n = \{\sigma \in V: \sigma $ has atleast $n-1$ prefixes in $V\}$ and $V_n = \{\sigma \in V: \sigma $ has exactly $n-1$ prefixes in $V\}$. $U_n$ is always $c.e.$ while $V_n$ need not be. Notice that $[V_1], [V_2], ..., [V_n]$ all cover $U_n$ and $V_1, V_2 ... V_n$ are all disjoint. Therefore $opwt_s(U_n) \leq wt_s(V)/n \leq 2^b/n$. So $\{U_{2^{n+b}}\}_{n \in \omega}$ is a vehement $s-$ test covering all $X$ that fail $V$. \\
+   \\Fix $s= 1/2$. \\
+   \textbf{Theorem:} There is an $A \leq_T0'$ such that $dim(A) = 1/2$ and if $Y \leq_TA$ then $dim(Y) \leq 1/2$.\\
+   Proof: We build $A$ as the limit of a sequence of approximations. A condition is a pair $<\sigma, s>$ such that $\sigma \in 2^{<\omega}$ and $ S \subset [\sigma]^\prec$ is $c.e.$ and $\sigma \not \in S^{OC}$.\\
+   Let $P_{<\sigma,s>} = [\sigma] - [S^{OC}]$. This is a non empty $\Pi^0_1$ class. $<\tau , T> \prec <\sigma,S> $ if $P_{<\tau , T>} \subset P_{<\sigma,S>}$.\\
+   \textbf{Reference}: Extracting information is hard: Dictionary: $W \to opwt, DW \to wt, PW \to pfwt$.\\
+   \textbf{Lemma}: Let $S = \{\sigma \in 2^{<\omega} : K(\sigma) \leq |\sigma| / 2\}$. Then $<\emptyset, S > $ is a valid condition. \\
+   Proof: $wt(S) = \sum_{\sigma \in S} 2^{-|\sigma|/2} \leq \sum_{\sigma \in S} 2^{-K(\sigma)} < \sum_{\sigma \in 2^{<\omega}} 2^{-K(\sigma) } < 1$. Therefore $opwt(S) \leq wt(S) < 1$. So $\emptyset \not \in S^{OC}$. \\
+   Note that every $A \in P_{<\emptyset, S>}$ has effective dim $dim(A) \geq 1/2$ since they are all $1/2- $ random.
+   \\ \textbf{Lemma: } Let $\sigma \in 2^{<\omega}$ and $S \subset [\sigma]^\prec$. If $[\sigma] - [S^{OC}]$ is non empty then it has positive measure $\geq 2^{-|\sigma|/\sqrt 2}$.
     \end{document}
