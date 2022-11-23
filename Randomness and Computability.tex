@@ -697,4 +697,20 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    Proof: $wt(S) = \sum_{\sigma \in S} 2^{-|\sigma|/2} \leq \sum_{\sigma \in S} 2^{-K(\sigma)} < \sum_{\sigma \in 2^{<\omega}} 2^{-K(\sigma) } < 1$. Therefore $opwt(S) \leq wt(S) < 1$. So $\emptyset \not \in S^{OC}$. \\
    Note that every $A \in P_{<\emptyset, S>}$ has effective dim $dim(A) \geq 1/2$ since they are all $1/2- $ random.
    \\ \textbf{Lemma: } Let $\sigma \in 2^{<\omega}$ and $S \subset [\sigma]^\prec$. If $[\sigma] - [S^{OC}]$ is non empty then it has positive measure $\geq 2^{-|\sigma|/\sqrt 2}$.
+   \newpage
+   \section{Lecture 33}
+   \textbf{Lemma:} Let $<\sigma,S>$ be a condition. Then $dim(\mu(P_{<\sigma,S>})) \leq 1/2$ where $P_{<\sigma,s>} = [\sigma] - [S^{OC}]$. \\\\
+   Proof: We prove that $dim(\mu[S^{OC}]) \leq 1/2$ that is $\mu(_{<\sigma,s>}) = 2^{-|\sigma| }- \mu[S^{O C}]$. If $S^{OC}$ is finite, then $\mu[S^{OC}]$ is rational. So assume its infinite. Let $ w = opwt(S)$. Let $V = \cup S_t^{OC}$ where $S_t$ are the finite approximations of $S$. So $V$ is c.e. and $[V] = [S^{OC}]$ and $wt(P) \leq w$ whenever $P \subset V$ is prefix free. Note that $V \supset S^{OC}$ is infinite. \\
+   Let $\{V_t\}_{t \in \omega}$ be an enumeration of $V$ with $V_0 = \emptyset$. Fix $s > 1/2$. We will produce a Solovay $s-$ test $T$ covering $\mu[V] = \mu[S^{OC}]$. $T$ will consist of rational intervals in $[0,1]$. It can be pulled back to a Solovay $s$ test in $2^{<\omega}$ covering the binary expansion of $\mu[V]$. The pullback will have $s$ weight $3\times wt_s(T)$.\\
+   $T = T_0 \cup T_1$ where if $\tau \in V_{t+1} - V_t$ put $[\mu[V_{t+1}], \mu[V_{t+1}] + 2^{-|\tau|}]$ into $T_0$. \\
+   If $\mu[V_t \cap 2^{>n}]\leq k 2^{-n}$ and $\mu[V_{t+1}\cap 2^{>n}]> k2^{-n}$ for some $k,n \in \omega$ then put $[\mu[V_{t+1}], \mu[V_{t+1}]+2^{-n}]$ into $T_1$. So $T$ is a $c.e.$ set of rational intervals. Note that this $T$ does not depend on $s$. \\
+   Since $V \cap 2^n$ is prefix free: \\
+   $wt_s(T_0) = \sum_{I\in T_0} |I|^s = \sum_{\tau \in V} 2^{-s|\tau|} = \sum_{n \in \omega} 2^{-sn}|V \cap 2^n| = \sum_{n \in \omega} 2^{(1/2 -s)n} 2^{-n/2} |V \cap 2^n| = \sum_{n \in \omega} 2^{(1/2-s)n} wt_{1/2}(V\cap 2^n ) \leq \sum_{n \in \omega} 2^{(1/2 -s )n} w < \infty$. \\
+   Now fix $n \in \omega$ and let $k$ be the number of intervals of length $2^{-n}$ added to $T_1$.\\
+   By construction $2^{-n}k < \mu[V\cap 2^{>n}]$. Let $P \subset V \cap 2^{>n}$ be prefix free such that $[P] = [V \cap 2^{>n}]$. Then $\mu[P] = \sum_{\sigma \in P} 2^{-|\sigma| } \leq \sum_{\sigma \in p} 2^{-n/2} 2^{-|\sigma|/2}= 2^{-n/2} wt_{1/2}(P) \leq 2^{-n/2} w$. So $2^{-n}k < 2^{-n/2}w $. So $k < 2^{n/2}w$. \\
+   $wt_s(T_1) = \sum_{I\in T_1} |I|^s < \sum_{n \in \omega} 2^{n/2} w(2^{-n})^s = \sum_{n\in \omega} 2^{(1/2-s)n}w < \infty$. So $T$ is a Solovay $s-$ test for any $s> 1/2$.\\
+   Next we prove that $T$ covers $\mu[V]$. Call $\tau \in V_{t+1} - V_t$ timely if $V_{t+1} \cap 2^{\leq n} = V\cap 2^{\leq n}$ where $n = |\tau|$. Since $V$ is infinitely there are $\infty$ many timely $\tau \in V$. Fix $\tau \in V_{t+1} - V_t$ timely and let $n = |\tau|$. \\
+   Claim: There is an interval length $2^{-n}$ in $T$ that contains $\mu [V]$. 
+   \\ Note that if $u > t$ then $\mu [V] - \mu [V_u] =\; \mu [ V\cap 2^{>n}] - \mu [V_u \cap 2^{>n}]$ because nothing shorter gets added. When $\tau$ enters $V$ we put $[\mu[V_{t+1}], \mu[V_{t+1}]+2^{-n}]$ into $T_0 \subset T$. Let $I = [\mu [V_u],\mu[V_u]+2^{-n}]$ be the last interval of length $2^{-n} $ added to $T$. If $\mu[V] \not \in I$ then $\mu[V] > \mu[V_u] + 2^{-n}$. But then $\mu[V \cap 2^{>n}]> \mu[V_u \cap 2^{>n}]+ 2^{-n}$ so after stage $u$ another interval of length $2^{-n}$ is added to $T_1 $ a contradiction.\\
+   So $\mu[V] \in I$ and there are infintely many timely $\tau \in V$ so $\mu[V]$ fails $T$. Since $[V] = [S^{OC}]$ we have $dim(\mu[S^{OC}]) \leq 1/2$.
     \end{document}
