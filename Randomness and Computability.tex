@@ -713,4 +713,28 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    Claim: There is an interval length $2^{-n}$ in $T$ that contains $\mu [V]$. 
    \\ Note that if $u > t$ then $\mu [V] - \mu [V_u] =\; \mu [ V\cap 2^{>n}] - \mu [V_u \cap 2^{>n}]$ because nothing shorter gets added. When $\tau$ enters $V$ we put $[\mu[V_{t+1}], \mu[V_{t+1}]+2^{-n}]$ into $T_0 \subset T$. Let $I = [\mu [V_u],\mu[V_u]+2^{-n}]$ be the last interval of length $2^{-n} $ added to $T$. If $\mu[V] \not \in I$ then $\mu[V] > \mu[V_u] + 2^{-n}$. But then $\mu[V \cap 2^{>n}]> \mu[V_u \cap 2^{>n}]+ 2^{-n}$ so after stage $u$ another interval of length $2^{-n}$ is added to $T_1 $ a contradiction.\\
    So $\mu[V] \in I$ and there are infintely many timely $\tau \in V$ so $\mu[V]$ fails $T$. Since $[V] = [S^{OC}]$ we have $dim(\mu[S^{OC}]) \leq 1/2$.
+   \newpage
+   \section{Lecture 34}
+   Conditions: $<\sigma,S>$ such that $\sigma \in 2^{<\omega}$ with $S \subset [\sigma]^\prec$ is $c.e.$ and $\sigma \not \in S^{OC}$\\
+   Let $P_{<\sigma,S>} = [\sigma] - S^{OC}$. This is a nonempty $\Pi^0_1$ class and $<\tau, T> \prec < \sigma,S> $ if $P_{<\tau,T>} \subset P_{<\sigma,S>}$.\\
+   \textbf{Lemma:} Let $S = \{\sigma : K(\sigma) \leq |\sigma|/2\}$. Then $<\emptyset,S>$ is a condition. \\
+   Note: Every $A \in P_{<\emptyset,S>}$ has $dim(A)\geq 1/2$.\\
+   \textbf{Lemma:} If $<\sigma,S>$ is a condition then $dim(\mu(P_{<\sigma,S>}) \leq 1/2$.\\
+   \textbf{Lemma:} Let $\sigma \in 2^{<\omega}$ and $S \subset [\sigma]^\prec$ If $[\sigma]- [S^{OC}]$ is nonempty then it has positive measure $\geq (1-\frac 1 {\sqrt 2})2^{-|\sigma|}$.\\
+   Proof: Let $n = |\sigma|$. Since $[S] \subset [\sigma]$ we have $op_{wt} (S) \leq 2^{-n/2}$. Since $[\sigma] - [S^{OC}] \neq \emptyset$ we have $\sigma \not \in S^{OC}$ and so $\tau \in S^{OC} \implies |\tau| \geq n+1$. \\
+   So $\mu[S^{OC}] = \sum_{\tau \in S^{OC} }2^{-|\tau|} \leq \sum_{\tau \in S^{OC}} 2^{-(n+1)/2} 2^{-|\tau|/2} = 2^{-(n+1)/2}\sum_{\tau \in S^{OC}} 2^{-|\tau|/2} \leq 2^{(n+1)/2} 2^{-n/2} = 2^{-n}/\sqrt 2$ where we have used $\sum_{\tau \in S^{OC}} 2^{-|\tau|/2} = wt(S^{OC}) = opwt(S)$. \\
+   So $\mu([\sigma] - [S^{OC}]) \geq 2^{-n} - 2^{-n}/\sqrt 2 > 0$.
+   So if $<\sigma, S> $ is a condition then $\mu(P_{<\sigma,S>})> 0$.\\\\
+   \textbf{Lemma:} Let $\sigma \in 2^{< \omega}$ and $S \subset [\sigma]^\prec$ be such that $ \mu([S])   < 2^{-|\sigma|}$ and $wt(S) < \infty$. Then for any $\epsilon > 0$ there is a $\tau $ extending $\sigma$ with $[\tau] \not \subset [S]$ and $wt(S\cap[\tau]^\prec) < \epsilon 2^{-|\tau|/2}$.\\
+   Proof: Take $b \in \omega$ such that $\mu([\sigma]- [S]) \geq 2^{-b}$. For each $m \geq b$ define $D_m = \{\tau : \sigma \prec \tau , |\tau| = m, \tau' \prec \tau \implies \tau' \not \in S\}$. Now $\mu([\sigma] - [S]) \leq |D_m| 2^{-m}$ because if $\tau \in 2^m$ is not in $D_m$ then $[\tau ] \subset [S]$. Hence $|D_m| \geq 2^{m-b}$.\\
+   Let $S_\tau = S \cap [\tau]^\prec$. If $\exists \tau \in D_m$ we have $wt(S_\tau) < \epsilon 2^{-m/2}$ then we win. Otherwise $wt(S) \geq \sum_{\tau \in D_m} wt(S_\tau) \geq \sum_{\tau \in D_m } \epsilon 2^{-m/2}\geq 2^{m-b} \epsilon 2^{-m/2} = \epsilon 2^{m/2 - b}$.  For 'large' $m$ this is false. \\
+   \textbf{Lemma:} Assume that $<\sigma_0, S_0> , <\sigma_1,S_1> ... <\sigma_n, S_n>$ is a sequence of conditions such that $\cap_i P_{<\sigma_i,S_i>}$ has positive measure. Then there is a condition $<\tau , T>$ such that $<\tau, T > \prec <\sigma_i,S_i>$ for all $i$. \\
+   Proof: The $\sigma_i$ must be comparable. So if $\sigma = \cup \sigma_i$, by assumption let $S= [\sigma]^\prec \cap (\cup_i S_i^{OC})$. Note that no prefix of $\sigma$ is in $\cup S_i^{OC}$.\\
+   $wt(S) \leq (n+1)< \infty$. By assumption $[\sigma] - [S] = [\sigma] - [\cup S_i^{OC}] =\cap_i P_{<\sigma_i,S_i>} $ has positive measure. Apply the lemma with $\epsilon = 1$ to get $\tau $ extending $\sigma$ with $wt(S_\tau) < 2^{-|\tau|}$ and $[\tau] \not \subset [S]$.\\
+   Let $T = S_\tau = S \cap [\tau]^\prec$. So $<\tau,T> $ is a condition because $opwt(T) \leq wt(T) < 2^{-|\tau|}$ so $\tau \not \in T^{OC}$. Also $P_{<\tau,T>} = [\tau] \cap ([\sigma] - [S]) \subset [\sigma] - [S] \subset [\sigma] - [S_i^{OC}] \subset [\sigma_i]- [S_i^{OC}] = P_{<\sigma_i,S_i>} \forall i$.
+   \\\\
+   \textbf{Theorem:} There is an $A \leq_T0'$ with $dim(A) = 1/2$ and $B \leq_TA \implies dim(B) \leq 1/2$.
+   Proof: Using $0'$ we build a sequence of conditions $<\sigma_0, S_0> $ extended by $<\sigma_1,S_1> $ extended by ..., and take $A = \cup \sigma_t = $ unique element in $\cap P_{<\sigma_t,S_t>}$. Since $0'$ runs the construction we have $A \leq_T 0'$. Let $<\sigma_0, S_0> $ be such that $A \in P_{<\sigma_0,S_0>}\implies dim(A) \geq 1/2$. So $dim(A) \geq 1/2$. Rest of the proof in next lecture! 
+   
+   
     \end{document}
