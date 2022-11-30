@@ -733,8 +733,25 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    $wt(S) \leq (n+1)< \infty$. By assumption $[\sigma] - [S] = [\sigma] - [\cup S_i^{OC}] =\cap_i P_{<\sigma_i,S_i>} $ has positive measure. Apply the lemma with $\epsilon = 1$ to get $\tau $ extending $\sigma$ with $wt(S_\tau) < 2^{-|\tau|}$ and $[\tau] \not \subset [S]$.\\
    Let $T = S_\tau = S \cap [\tau]^\prec$. So $<\tau,T> $ is a condition because $opwt(T) \leq wt(T) < 2^{-|\tau|}$ so $\tau \not \in T^{OC}$. Also $P_{<\tau,T>} = [\tau] \cap ([\sigma] - [S]) \subset [\sigma] - [S] \subset [\sigma] - [S_i^{OC}] \subset [\sigma_i]- [S_i^{OC}] = P_{<\sigma_i,S_i>} \forall i$.
    \\\\
-   \textbf{Theorem:} There is an $A \leq_T0'$ with $dim(A) = 1/2$ and $B \leq_TA \implies dim(B) \leq 1/2$.
-   Proof: Using $0'$ we build a sequence of conditions $<\sigma_0, S_0> $ extended by $<\sigma_1,S_1> $ extended by ..., and take $A = \cup \sigma_t = $ unique element in $\cap P_{<\sigma_t,S_t>}$. Since $0'$ runs the construction we have $A \leq_T 0'$. Let $<\sigma_0, S_0> $ be such that $A \in P_{<\sigma_0,S_0>}\implies dim(A) \geq 1/2$. So $dim(A) \geq 1/2$. Rest of the proof in next lecture! 
+   \textbf{Theorem:} There is an $A \leq_T0'$ with $dim(A) = 1/2$ and $B \leq_TA \implies dim(B) \leq 1/2$.\\
+   Proof: Using $0'$ we build a sequence of conditions $<\sigma_0, S_0> $ extended by $<\sigma_1,S_1> $ extended by ..., and take $A = \cup \sigma_t = $ unique element in $\cap P_{<\sigma_t,S_t>}$. Since $0'$ runs the construction we have $A \leq_T 0'$. Let $<\sigma_0, S_0> $ be such that $A \in P_{<\sigma_0,S_0>}\implies dim(A) \geq 1/2$. So $dim(A) \geq 1/2$. Proof in next lecture! 
    
+   \newpage
+   \section{Lecture 35}
+   Proof Continued: Let $\{\varphi_e\}$ ennumerate partial computable functionals. We will meet the requirements \\$R_{<e,n>}: \varphi_e^A$ total $\implies \exists l\geq n K(\varphi_e^A|_l) \leq (1/2+2^{-n})l$. \\So $B \leq_T A \implies dim(B) \leq 1/2$ (and so $dim(A) \leq 1/2$).\\
+   Stage $t+1 = <e,n>$ : Take $b$ such that $2^{-b} < \mu(P_{<\sigma_t, s_t})$ (note that $b= |\sigma_t|+1$ works).\\
+   We define a prefix free machine $M$ such that $M(p)$ acts as follows: Wait for $U(p) \downarrow$ (so $dom(M) \subset dom(U)$). Let $\sigma = U(p)$ and $m=|\sigma|$. We are only interested in the case where $\sigma$ is an initial segment of $\mu(P_{<\sigma_t,S_t>})$'s binary expansion.\\
+   For each $\tau \in 2^{<\omega}$ let $T_\tau = \{v \succ \sigma_t : \tau \prec \varphi_e^v\}$. Then $T_\tau$ is c.e. Now Search for $\tau \in 2^{m-b}$ such that $\mu(P_{<\sigma_t, S_t \cup T_\tau> })< .\sigma$ where $.\sigma$ is the rational corresponding to $\sigma$ and let $M(p) = \tau$.\\
+   We can effectively find a $c \in \omega$ such that $\forall \tau K(\tau) \leq K_M(\tau) + c$. Using $0'$ find $\sigma$ that is an initial segment of $\mu(P_{<\sigma_t,S_t>})$ of length $m> n+b$ and $K(\sigma)+ c \leq( 1/2 + 2^{-n})(m-b)$. Let $p = \sigma^* $ (minimal $U$ program for $\sigma$).\\
+   \textbf{Case 1}: $M(p) \downarrow = \tau$. \\
+   We have $\mu(P_{<\sigma_t,S_t>}) \geq .\sigma$ and $\mu(P_{<\sigma_t, S_t \cup T_\tau>}) < .\sigma$ \\
+   Hence there is a $\sigma_{t+1} \in T_\tau$ such that $[\sigma_{t+1}] \not \subset [S^{OC}_t]$. We may also assume $\sigma_{t+1} \succ \sigma_t$ and $0'$ can find $\sigma_{t+1}$. Let $S_{t+1} = S_t \cap [\sigma_{t+1}]^\prec$. No prefix of $\sigma_{t+1}$ is in $S_t^{OC}$ so $S^{OC}_{t+1} = S^{OC}_t \cap [\sigma_{t+1}]^\prec$. So $<\sigma_{t+1},S_{t+1}>$ is a valid condition that extends $<\sigma_t,S_t>$.\\
+   Why is $R_{<e,n>}$ satisfied? Take $A \in P_{<\sigma_{t+1},S_{t+1}>}$, then $\sigma_{t+1} \prec A$ and $\sigma_{t+1} \in T_\tau$ and so $\varphi_e^A \succ \tau$. Let $k = |\tau| = m-b$ which is $> n$. $K(\varphi_e^A|_l) = K(\tau) \leq K_M(\tau)+c \leq |\rho| + c = K(\sigma) + c \leq (1/2+2^{-n})(m-b) = (1/2+2^{-n})l$.\\
+   \textbf{Case 2}: In this case $\mu(P_{<\sigma_t,S_t\cup T_\tau}) \geq .\sigma$ for all $\tau \in 2^{m-b}$. Therefore $<\sigma_t , S_t\cup T_\tau>$ is a condition and it extends $<\sigma_t,S_t>$ and furthermore $\mu(P_{<\sigma_t,S_t>}- P_{<\sigma_t,S_t\cup T_\tau}) \leq 2^{-m}$. \\
+   Note that $\mu(\cap_{\tau \in 2^{m-b} }P_{<\sigma_t,S_t\cup T_\tau>}) \geq \mu(P_{<\sigma_t,S_t>}) - 2^{m-b}2^{-m} > 2^{-b} - 2^{-b} > 0$. \\
+   Therefore there is a condition $<\sigma_{t+1}, S_{t+1}>$ extending $<\sigma_t, S_t \cup T_\tau>$ for all $\tau \in 2^{m-b}$ (Can take $\sigma_{t+1} \succ \sigma_t$). $0'$ can find this.\\\\
+   Why is $R_{<e,n>}$ satisfied? If $\varphi_e^A$ is total, let $\tau = \varphi^A_e|_{m-b}$ Since $\sigma_t \prec A$ some $\gamma \prec A$ is in $T_\tau$. But then $A \not \in P_{<\sigma_t,S_t\cup T_\tau>} \geq P_{<\sigma_{t+1}, S_{t+1}>}$ and so $\varphi_e^A$ is partial.\qed \\
+   \\
+   \textbf{Lemma:} Fix an oracle $Z$ and a countable collection of functions $f_i$ such that $f_i: 2^\omega \to 2^\omega$. is continuous. There is an $A \in 2^\omega$ such that $dim^Z(A) = 1/2$ and $dim^{f_i}(f_i(A)) \leq 1/2$.
    
     \end{document}

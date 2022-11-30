@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  28 NOV 2022 15:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.30)  30 NOV 2022 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -745,18 +745,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 718--738
 
  []
 
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 741--756
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--756
+
+ []
+
 
 AED: lastpage setting LastPage
-[37] (./Randomness and Computability.aux)
+[38] (./Randomness and Computability.aux)
 Package rerunfilecheck Info: File `"Randomness and Computability".out' has not 
 changed.
-(rerunfilecheck)             Checksum: AFC616F624B033CFC00DAA5BB0CF66FE;5941.
+(rerunfilecheck)             Checksum: 73A3688BD59BE977F932D51E6E1787B6;6039.
  ) 
 Here is how much of TeX's memory you used:
- 11647 strings out of 478994
- 168748 string characters out of 5858184
+ 11650 strings out of 478994
+ 168777 string characters out of 5858184
  499617 words of memory out of 5000000
- 28874 multiletter control sequences out of 15000+600000
+ 28875 multiletter control sequences out of 15000+600000
  411293 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,6n,74p,1254b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -777,10 +787,10 @@ ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 21/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Randomness and Computability.pdf" (37 pages, 369748 bytes).
+Output written on "Randomness and Computability.pdf" (38 pages, 375045 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
- 437 compressed objects within 5 object streams
- 87 named destinations out of 1000 (max. 500000)
- 385 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 507 PDF objects out of 1000 (max. 8388607)
+ 445 compressed objects within 5 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
