@@ -751,7 +751,24 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    Note that $\mu(\cap_{\tau \in 2^{m-b} }P_{<\sigma_t,S_t\cup T_\tau>}) \geq \mu(P_{<\sigma_t,S_t>}) - 2^{m-b}2^{-m} > 2^{-b} - 2^{-b} > 0$. \\
    Therefore there is a condition $<\sigma_{t+1}, S_{t+1}>$ extending $<\sigma_t, S_t \cup T_\tau>$ for all $\tau \in 2^{m-b}$ (Can take $\sigma_{t+1} \succ \sigma_t$). $0'$ can find this.\\\\
    Why is $R_{<e,n>}$ satisfied? If $\varphi_e^A$ is total, let $\tau = \varphi^A_e|_{m-b}$ Since $\sigma_t \prec A$ some $\gamma \prec A$ is in $T_\tau$. But then $A \not \in P_{<\sigma_t,S_t\cup T_\tau>} \geq P_{<\sigma_{t+1}, S_{t+1}>}$ and so $\varphi_e^A$ is partial.\qed \\
-   \\
-   \textbf{Lemma:} Fix an oracle $Z$ and a countable collection of functions $f_i$ such that $f_i: 2^\omega \to 2^\omega$. is continuous. There is an $A \in 2^\omega$ such that $dim^Z(A) = 1/2$ and $dim^{f_i}(f_i(A)) \leq 1/2$.
+     \newpage
+   \section{Lecture 36}
    
+   \textbf{Lemma:} Fix an oracle $Z$ and a countable collection of functions $f_i$ such that $f_i: 2^\omega \to 2^\omega$. is continuous. There is an $A \in 2^\omega$ such that $dim^Z(A) = 1/2$ and $dim^{f_i}(f_i(A)) \leq 1/2$.\\
+ 
+   Partial relativization - No access to $Z$ when compressing $f_i(A)$. 
+   Total 'reductions' $f_i$.\\
+   \textbf{Theorem:} Assuming Continuum Hypothesis there is an $E \subset 2^\omega$ with $dim_H(E) = 1/2$ and for all continuous $f: 2^\omega \to 2^\omega$ we have $dim(f(E)) \leq 1/2$.\\
+   Proof: Let $\{Z_\lambda: \lambda < \omega_1$ list $2^\omega\}$ and $\{f_\lambda: \lambda< \omega_1\}$ list all continuous functions $2^\omega \to 2^\omega$. Let $A_\lambda$ be given by the lemma applied to $Z_\lambda$ and the countable collection $\{f_\gamma : \gamma \leq \lambda\}$. Finally let $E = \{A_\lambda: \lambda < \omega_1\}$. For any $Z$ there is an $A \in E$ such that $dim^Z(A) = 1/2$. By point to set $dim_H(E) \geq 1/2$.\\
+   Now let $f: 2^\omega \to 2^\omega$ be a continuous function. Say $f = f_\lambda$. But $E = \{A_\gamma: \gamma< \lambda\} \cup \{A_\gamma: \gamma \geq \lambda\}$. Call the first set in the union $E_0$ and the second set $E_1$. Since $E_0$ is countable, $dim_H(f(E_0))= 0 $.On the other hand $\forall A \in E_1$ we have $dim^{f_\lambda}(f_\lambda(A)) \leq 1/2$ so by point to set $dim_H(f_\lambda(E_1)) \leq 1/2$. Hence $dim_H(f_\lambda(E)) \leq 1/2$.\\\\
+   \textbf{Lemma:} If $0 \leq s < t \leq 1$ and $\delta >0$ then $\exists n\in \omega \forall N$  and $\forall f: 2^N \to 2^n$ there is an $A \subset 2^n$ such that \\$i) wt_t(A) \leq \delta$\\
+   $ii) opwt_s(f^{-1}(A)) =1$. \\
+   \textbf{Lemma 1:} Fix $s \in [0,1]$ and let $V \subset 2^{<\omega}$. If $opwt_s(V) < 1$ then $\mu[V^{OC(s)}] < 2^{s-1}$ (same as proof for s=1/2)\\
+   \textbf{Lemma:} If $a,b \geq 0$ and $r \in (0,1]$ then $(a+b)^r \leq a^r + b^r$ i.e. $x \to x^r$ is subadditive.\\
+   \textbf{Lemma 2}: Let $s \in (0,1]$. If $V \subset 2^{<\omega}$ then $wt_s(V) \geq (\mu[V])^s$.\\
+   Example: Let $V = \{\sigma\}, |\sigma| = n$, then $wt_s(V) = 2^{-sn}$ and $(\mu[V])^s = 2^{-ns} $.\\
+   Proof: Sufficient to prove for finite $V$ because the inequality is preserved under a limit. $V = \emptyset$ is clear. Otherwise we use induction on the length $n$ of the longest string in $V$. If $n = 0$ or even when $\emptyset \in V$, then $wt_s(V) \geq 1 = (\mu[V])^s$. Assume $n>1$ and $\emptyset \not \in V$.\\
+   For $i \in \{0,1\}$ let $V_i = \{\sigma \in 2^{<\omega}: i \sigma \in V\}$. By induction, $wt_s(V) =2^{-s} (wt_s(V_0)+ wt_s(V_1)) \geq 2^{-s}(\mu[V_0]^s + \mu[V_1]^s) \geq 2^{-s}(\mu[V_0]+ \mu[V_1])^s= 2^{-s}.(2\mu[V])^s = \mu[V]^s$.\\
+   \textbf{Lemma 3}: $D \subset E \implies[ D^{OC}] \subset [E^{OC}]$.\\
+   \textbf{Lemma 4}: If $B_0 \subset B_1 ... \subset B_i$, and $C = \cup_{j \leq i} B_j^{OC(s)}$ then $pfwt_s(C) \leq opwt_s(B_i)$.
     \end{document}
