@@ -771,4 +771,51 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    For $i \in \{0,1\}$ let $V_i = \{\sigma \in 2^{<\omega}: i \sigma \in V\}$. By induction, $wt_s(V) =2^{-s} (wt_s(V_0)+ wt_s(V_1)) \geq 2^{-s}(\mu[V_0]^s + \mu[V_1]^s) \geq 2^{-s}(\mu[V_0]+ \mu[V_1])^s= 2^{-s}.(2\mu[V])^s = \mu[V]^s$.\\
    \textbf{Lemma 3}: $D \subset E \implies[ D^{OC}] \subset [E^{OC}]$.\\
    \textbf{Lemma 4}: If $B_0 \subset B_1 ... \subset B_i$, and $C = \cup_{j \leq i} B_j^{OC(s)}$ then $pfwt_s(C) \leq opwt_s(B_i)$.
-    \end{document}
+   \newpage
+   \section{Lecture 37}
+   We'll now prove the lemma from last time.\\
+   \textbf{Lemma:} Let $0 \leq s < t \leq 1$ and $\delta > 0$. Then there is an $n \in \omega$ such that $\forall N \forall f: 2^N \to 2^n$ there is an $A \subset 2^n$ such that\\
+   i) $wt_t(A) \leq \delta$\\
+   ii) $opwt_s(f^{-1}(A))=1$\\
+   Proof: All optimal covers are for dim $s$. Let $\gamma = (t+s)/2$ and take $n$ large. We will define a sequence $\sigma_0,\sigma_1, ...$ of strings in $2^n$. Let $B_i = f^{-1}(\{\sigma_0,...,\sigma_i\})$. We want to show that we can pick the $\sigma_i's$ so that $opwt_s(B_m) = 1$ for a fairly small $M$.\\
+   We will let $A = \{\sigma_0,...,\sigma_m\}$ and let $C_i = \cup_{i\leq j} B_j^{OC}$. Note that $[C_i] = [B_i^{OC}]$. So $opwt_s(C_i) = opwt_s(B_i$). By lemma 4, $pfwt_s(C_i) \leq opwt_s(B_i) \leq 1$.\\
+   Now $wt_{s+\gamma}(C_i) = \sum_l \sum_{\sigma \in C_i \cap 2^l} 2^{(-s+\gamma)l} = \sum_l 2^{-\gamma l} \sum_{\sigma \in C_i \cap 2^l} 2^{-sl} \leq \sum_l 2^{-\gamma l} pfwt_s(C_i) \leq 1/(1-2^{-\gamma}) = d_0$- Does not depend on $n$. \\
+   We will now argue that if $opwt_s(B_i) < 1$ then we can choose $\sigma_{i+1}$ to push up $wt_{s+\gamma}(c_i)$ by a non trivlal amount.\\
+   By lemma 1 if $opwt_s(B_i) < 1$ then $\mu(2^\omega - [B_i^{OC}]) \geq 1- 2^{s-1} > 0$. This means that there is a $\sigma_{i+1} \in 2^n$ such that $[f^{-1}(\sigma_{i+1} ] - [B_i^{OC}]$ has measure at least $d_1 2^{-n}$ where $d_1 = 1-2^{s-1}$. Let $D = C_{i+1 }- C_i$. Note that $[D] \supset [C_{i+1}] - [C_i] = [B_{i+1}^{OC}] - [B_i^{OC}] \supset [f^{-1}(\sigma_{i+1}] - [B_i^{OC}]$. Therefore $\mu[D] \geq d_1 2^{-n}$. By $lemma 2$, $wt_{s+\gamma}(D) \geq d_1^{s+\gamma} 2^{-(s+\gamma)n}$.\\
+   So the choice of $\sigma_{i+1}$ added at least $d_1^{s+\gamma} 2^{-(s+\gamma)n}$ to $wt_{s+\gamma}(C_{i+1})$. We can do this at most $d_0 d_1^{-(s+\gamma)}2^{(s+\gamma)n}$ times. So $opwt_s(B_m) = 1$ for some $M$ less than this.\\
+   For sufficiently large $n$, we have $wt_t(\{\sigma_0,...,\sigma_M\}) \leq d_0 d_1^{-s-\gamma}2^{(s+\gamma)n} 2^{-tn} = d_0 d_1^{-s-\gamma}2^{-\gamma n}\leq \delta$.\\\\
+   \textbf{Lemma:} Fix $Z$ and a countable collection $f_0,f_1,...$ of continuous functions $f_i : 2^\omega \to 2^\omega$. There is an $A \in 2^\omega$ such that $dim^Z(A) \geq 1/2$ and $\forall i dim^{f_i}(f_i(A)) \leq 1/2$. 
+   \\Proof: We build a sequence of conditions $<\sigma_0,S_0> \succ <\sigma_1, S_1> \succ ...$ and take $A = \cup \sigma_i = $ the unique element of $\cap P_{<\sigma_t,S_t>}$.
+   Let $<\sigma_0,S_0> = <\emptyset , \{\tau \in 2^{<\omega}: K^Z(\tau) \leq |\tau|/2\}>$. We will meet the requirements \\
+   $R_{i,m}: (\exists n \geq m) K^{f_i}(f_i(A)|_n) \leq (1/2 + 2^{-m})n$.\\
+   Stage $t = <i,m>+1$: We try to satisfy $R_{<i,m>}$. Define a prefix free $f_i$ machine $M^{f_i}$ as follows: By the recursion theorem, we may assume that we know a constant $c$ such that $\forall \tau K^{f_i}(\tau) \leq K_{M^{f_i}}(\tau)+c$. \\
+   Proof finished next time.
+   \newpage
+   \section{Lecture 38}
+   We now prove the lemma from last class:
+   \textbf{Lemma:} Fix $Z$ and a countable collection $f_0,f_1,...$ of continuous functions $f_i : 2^\omega \to 2^\omega$. There is an $A \in 2^\omega$ such that $dim^Z(A) \geq 1/2$ and $\forall i\; dim^{f_i}(f_i(A)) \leq 1/2$. 
+   \\Proof: We build a sequence of conditions $<\sigma_i,S_i>$ monotonically getting stronger such that $A = \cup \sigma_i = $ the unique element in $\cap P_{<\sigma_i,S_i>}$. \\
+   Let $<\sigma_0,S_0 > = <\emptyset, \{\tau : K^Z(\tau) \leq |\tau|/2\}> $ so that $dim(A) \geq 1/2$.
+   \\ Let $R_{i,m} : \exists n \geq m\; K^{f_i}(f_i(A)|_n) \leq (1/2 + 2^{-m})n$. \\
+   Stage $v = <i,m>+1$ (Satisfy $R_{i,m}$): Define a prefix free machine $M^{f_i}$ as follows: By the recursion theorem we may assume we know a constant $c$ such that $\forall \tau K^{f_i}(\tau) \leq K_{M^{f_i}}(\tau) + c$. Let $s = 1/2$ and $t = 1/2 + 2^{-m}$. Let $\delta = 2^{-c-1}$. Fix $n$ from the lemma and let $\hat f: 2^\omega \to 2^\omega$ be defined by $\hat f(B) = f_i(\sigma_v B)$.\\
+   By compactness there is a $N$ such that $B|_N$ determines $\hat f(B)|_n$.\\
+   So let $f: 2^N \to 2^n$ be the resulting function. \\
+   So let $f:2^N \to 2^n$ be the resulting function and apply the lemma to get $C \subset 2^n$ such that $wt_t(C) \leq \delta$ and $opwt_s(f^{-1}(C)) = 1$. Now $M^{f_i}$ gives each $\tau \in C$ a program of length $\leq t |\tau|-c$.
+    Note that $(\sigma_v \frown f^{-1}(C))^{OC} = \{\sigma_v\}$.\\
+   So $[\sigma_v \frown f^{-1}(c)] \not \subset [S_v^{OC}]$.
+   Take $\sigma_{v+1} \in \sigma_v \frown f^{-1}(C)$ such that no prefix of $\sigma_{v+1}$ is in $S_v^{OC}$.\\
+   Then $<\sigma_{v+1}, S_v \cap [\sigma_{v+1}]^\prec>$ is a condition that extends $<\sigma_v,S_v>$. Note that if $A \in P_{<\sigma_{v+1},s_{v+1}>}$ then $f_i(A)|_n \in C$ so $K^{f_i}(f_i(A)|_n) \leq K_{M^{f_i}}(f_i(A) |_n) + c \leq tn - c+ c = tn = (1/2 + 2^{-m})n$.\\\\
+   \textbf{Theorem}:  Assume $CH$. Then $\forall s \in [0,1) \exists E \subset 2^\omega$ such that $dim_H(E) = s$ and if $f: 2^\omega \to 2^\omega$ is continuous then $dim_H(f(E)) \leq s$.\\
+   What about $\bb R^k$?\\
+   Let $p: 2^\omega \to [0,1]$ be the continuous surjection given by (binary expansion$)^{-1}$. Note that $p$ preserves measure, $H-$ dim,....\\
+   Let $p_K: 2^\omega \to [0,1]^k$ by $P_k(A_0 \oplus ... \oplus A_{k-1}) = (p(A_0),p(A_1),....)$. This preserves relative dimension: $dim_H(p_k(E)) = k\times  dim_H(E)$.\\
+   Issue: A continuous function $\hat f: 2^\omega \to [0,1]^k$ cannot be approximated by a function $f: 2^N \to (2^n)^k$ : Suppose we are mapping from $2^\omega \to $ the unit square. We can take $N$ large enough to determine the image of $A|_N$ under the function upto $n$ bits to within $2^k$ possibilities. Pick the 'leftmost' possibility, then the combinatorial lemma provides a $C \subset (2^n)^k$ which we expand to one of 'weight' $\leq 2^k \times \delta$.\\
+   \textbf{Theorem:} Assuming $CH$. $\forall s \in [0,1) \exists E \subset 2^\omega$ such that $dim_H(E) = s$ and for any continuous $f: 2^\omega \to 2^\omega$ we have $dim_H(f(E)) \leq s$ and for any continuous $f: 2^\omega \to \bb R^k$ we have $dim_H(f(E)) \leq sk$.
+   \\
+   Take $E$ from this theorem and let $\hat E = p_2(E)$ so $\hat E \subset \bb R^2$.\\
+   \textbf{Corollary:} There is an $\hat E \subset [0,1]^2$ such that $dim_H(\hat E) = 1$ and if $f: \bb R^2 \to \bb R^2$ is continuous then $dim_H(f(E)) \leq 1$.\\
+   \textbf{Theorem:} There is a $E \subset [0,1]^2$ such that $dim_H(E) =1 $ and if $f: [0,1]^2 \to \bb R$ is continuous then $dim_H(f(E)) = 0$.\newpage
+   \section{Lecture 39}
+   
+   
+    \end{document} 
