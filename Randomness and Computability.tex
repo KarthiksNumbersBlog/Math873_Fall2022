@@ -809,13 +809,31 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    What about $\bb R^k$?\\
    Let $p: 2^\omega \to [0,1]$ be the continuous surjection given by (binary expansion$)^{-1}$. Note that $p$ preserves measure, $H-$ dim,....\\
    Let $p_K: 2^\omega \to [0,1]^k$ by $P_k(A_0 \oplus ... \oplus A_{k-1}) = (p(A_0),p(A_1),....)$. This preserves relative dimension: $dim_H(p_k(E)) = k\times  dim_H(E)$.\\
-   Issue: A continuous function $\hat f: 2^\omega \to [0,1]^k$ cannot be approximated by a function $f: 2^N \to (2^n)^k$ : Suppose we are mapping from $2^\omega \to $ the unit square. We can take $N$ large enough to determine the image of $A|_N$ under the function upto $n$ bits to within $2^k$ possibilities. Pick the 'leftmost' possibility, then the combinatorial lemma provides a $C \subset (2^n)^k$ which we expand to one of 'weight' $\leq 2^k \times \delta$.\\
+   Issue: A continuous function $\hat f: 2^\omega \to [0,1]^k$ cannot be approximated by a function $f: 2^N \to (2^n)^k$ : Suppose we are mapping from $2^\omega \to $ the unit square. We can take $N$ large enough to determine the image of $A|_N$ under the function up to $n$ bits to within $2^k$ possibilities. Pick the 'leftmost' possibility, then the combinatorial lemma provides a $C \subset (2^n)^k$ which we expand to one of 'weight' $\leq 2^k \times \delta$.\\
    \textbf{Theorem:} Assuming $CH$. $\forall s \in [0,1) \exists E \subset 2^\omega$ such that $dim_H(E) = s$ and for any continuous $f: 2^\omega \to 2^\omega$ we have $dim_H(f(E)) \leq s$ and for any continuous $f: 2^\omega \to \bb R^k$ we have $dim_H(f(E)) \leq sk$.
    \\
    Take $E$ from this theorem and let $\hat E = p_2(E)$ so $\hat E \subset \bb R^2$.\\
    \textbf{Corollary:} There is an $\hat E \subset [0,1]^2$ such that $dim_H(\hat E) = 1$ and if $f: \bb R^2 \to \bb R^2$ is continuous then $dim_H(f(E)) \leq 1$.\\
    \textbf{Theorem:} There is a $E \subset [0,1]^2$ such that $dim_H(E) =1 $ and if $f: [0,1]^2 \to \bb R$ is continuous then $dim_H(f(E)) = 0$.\newpage
    \section{Lecture 39}
-   
+   Note all sets of $s-dim_H$ are the same:\\
+   \textbf{Definition:} i)Given $E \subset 2^\omega$ we say $E$ has essential dimension $s$ if $dim_H(E) = s$ and $E$ is not a countable union of sets of lower dimension.\\
+   ii)We say that $E$ is $\sigma-$ finite in dimension $s$ if it is a countable union of sets each of whose $s-$ dimension is finite. \\
+   \textbf{Theorem:} The theorem from last class is true if we instead take $E$ to be not $\sigma$ finite in dimension $s$.\\
+   Idea: Every $F \subset 2^\omega$ of finite $H_s$ measure is covered by a $V_n \subset 2^{<\omega}$ of fixed finite weight with least string of length $\geq n$ and we can avoid countably many such families.\\
+   \\
+   \textbf{Theorem:} Assuming $CH$ for every $t \in (0,1]$ there is an $E \subset 2^\omega$ that is essentially dimension $t$ and if $f : 2^\omega \to 2^\omega$ is continuous then $H_t(f(E)) =0$.\\
+   Idea: Use $s< t$ lemma with $t$ fixed and $s\to t$. \\
+   \textbf{Fact:} $E \subset 2^\omega$ has nonzero $H_t$ measure $\iff \forall Z \exists A \in E$ such that $A$ is (strongly) t- random relative to $Z$.\\
+   \textbf{Proposition:} If $E \subset 2^\omega$ is $\sigma-$ finite in dimension $s$ and $H_s(E) > 0$ then there is a continuous $f: 2^\omega \to 2^\omega$ such that $f(E)$ has non zero outer Lebesgue measure. In particular $dim(F(E))=1$.\\
+   \subsection{(Uniform) Almost Everywhere Domination}
+   Recall that we say $f$ majorizes $g$ if $\forall n f(n) \geq g(n)$ and $f$ dominates $g$ if $\exists N \forall n > N f(n) \geq g(n)$.
+   \\ \textbf{Definition}(Dobrinen, Simpson): $B$ is almost everywhere dominating (aed) if for almost all $X$ every $X$ computable function is dominated by a $B$ computable function.\\
+   $B$ is uniformly aed if there is an $f \leq_T B$ such that for almost every $X$ every $X$ computable function is dominated by $f$.\\
+   We will see that $B$ is $aed \iff B $ is $uaed \iff 0' \leq_{LR}B$ (i.e. every $B$ random is $2-$ random).
+   \\\textbf{Facts:} i) $uaed \implies $ high. ii)$uaed \implies aed$. iii) $0$ is not $aed$ since every $2-$ random has hyperimmune degree. iv) $0'$ is uaed.
+   \\ \textbf{Theorem:} $B$ is $aed \iff$ for every $\Pi^0_2$ class $Q$ and $\epsilon>0$ there is a $\Pi^0_1[B]$ class $F\subset Q$ with $\mu(F) \geq \mu(Q)  - \epsilon$.\\
+   Proof: Assume $B$ is $aed$. Then given a $\Pi^0_2$ set $Q \subset 2^\omega$ let $\psi$ be a partial computable function such that $Q = \{X \in 2^\omega: (\forall n ) \psi^X(n) \downarrow\}$. Let $g^X(n) = $ least $s$ such that $\psi_s^X(n)\downarrow$. For almost all $X \in Q$ there is an $f \leq_T B$ that majorizes $g^X$. Thus for $\epsilon > 0$ there is an $f \leq_T B$ such that $\mu(\{X \in Q: f $ majorizes $g^X\}) \geq \mu(Q)  - \epsilon$.\\
+   So $F = \{X \in 2^\omega: \forall n \psi^X_{f(n)}(n) \downarrow\}$ is a $\Pi^0_1[B]$ subset of $Q$ such that $\mu(F) \geq \mu(Q) - \epsilon$.
    
     \end{document} 
