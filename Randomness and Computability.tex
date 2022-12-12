@@ -835,5 +835,26 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    \\ \textbf{Theorem:} $B$ is $aed \iff$ for every $\Pi^0_2$ class $Q$ and $\epsilon>0$ there is a $\Pi^0_1[B]$ class $F\subset Q$ with $\mu(F) \geq \mu(Q)  - \epsilon$.\\
    Proof: Assume $B$ is $aed$. Then given a $\Pi^0_2$ set $Q \subset 2^\omega$ let $\psi$ be a partial computable function such that $Q = \{X \in 2^\omega: (\forall n ) \psi^X(n) \downarrow\}$. Let $g^X(n) = $ least $s$ such that $\psi_s^X(n)\downarrow$. For almost all $X \in Q$ there is an $f \leq_T B$ that majorizes $g^X$. Thus for $\epsilon > 0$ there is an $f \leq_T B$ such that $\mu(\{X \in Q: f $ majorizes $g^X\}) \geq \mu(Q)  - \epsilon$.\\
    So $F = \{X \in 2^\omega: \forall n \psi^X_{f(n)}(n) \downarrow\}$ is a $\Pi^0_1[B]$ subset of $Q$ such that $\mu(F) \geq \mu(Q) - \epsilon$.
+   \newpage 
+   \section{Lecture 40}
+   \textbf{Theorem:} $B$ is almost everywhere dominating $\iff$ for every $\Pi^0_2$ class $Q$ and $\epsilon > 0$ there is a $\Pi^0_1[B]$ class $F \subset Q$ such that $\mu(F) \geq \mu(Q) - \epsilon$.\\
+   Proof: The forward direction was done last time.\\
+   For the backward direction given $e, \epsilon$ let $Q_e = \{ X \in 2^\omega: \forall n \varphi_e^X(n) \downarrow \}$. This is $\Pi^0_2$ so let $F \subset Q$ be $\Pi^0_1[B]$ such that $\mu(F) \geq \mu(Q) - \epsilon$.\\
+   $F$ is closed and $\forall X \in F \varphi_e^X$ is total. So by compactness we can $B$ compute a function $f$ majorizing every $\varphi_e^X$ for $X \in F$.\\
+   Letting $\epsilon \to 0$ for almost every $X \in Q_e$ thre is an $f \leq_T B$ majorizing $\varphi_e^X$. This holds for all $e$ so $B$ is almost everywhere dominating.\\
+   Recall that $A \leq_{LR} B$ if and only if every $\Pi^0_1[A]$ class of positive measure has a $\Pi^0_1[B]$ subclass of positive measure.\\
+   Corollary: $B$ is almost everywhere dominating $\implies 0' \leq_{LR} B$.\\
+   Fact: Every $\Pi^0_1[0']$ class is a $\Pi^0_2$ class. \\
+   Proof: Let $Q = \{X  \in 2^\omega: \forall n X|_n \in T\}$ where $T \leq_T0'$. $T$ is $\Delta^0_2$ and in particular $\Pi^0_2$. There is a computable $R$ such that $\sigma \in T \iff \forall u \exists v R(u,v,\sigma)$. So $Q = \{X \in 2^\omega: \forall n \forall u \exists v R(u,v,X|_n)\}$ is $\Pi^0_2$.\\
+   Proof of corollary: Let $Q$ be a $\Pi^0_1[0']$ class and hence a $\Pi^0_2$ class. Applying the theorem to get a positive measure $\Pi^0_1[B]$ subclass of $Q$. \\
+   \textbf{Theorem:} $B$ is uniform almost everywhere dominating $\iff$ for every $\Pi^0_2$ class there is a $\Sigma^0_2[B]$ subclass $S \subset Q$ such that $\mu(S) = \mu(Q)$.\\
+   Proof: Let $B$ be uniformly almost everywhere dominating as witnessed by $f \leq_TB$. Let $Q$ be a $\Pi^0_2$ class and take $\psi$ partial computable such that $Q = \{X \in 2^\omega: \forall n \psi^X(n)\downarrow\}$. Define $g^X(n) = $ least $s$ such that $\psi^X_s(n)\downarrow$. Let $S = \{X \in 2^\omega: \exists k \forall n \psi^X_{f(n)+k}(n)\downarrow\}$.
+   So $S \subset Q$ is $\Sigma^0_2[B]$ and $\mu(S) = \mu(Q)$.\\
+   For the backward direction let $Q = \{0^l 1 X : e \in \omega, X \in 2^\omega, \varphi_e^X $ total $\}$. So $Q$ is $\Pi^0_2$. Take $S \subset Q$ a $\Sigma^0_2[B]$ class with $\mu(S) = \mu(Q)$. Write $S = \cup_{i \in \omega} P_i$ where each $P_i$ is a $\Pi^0_1[B]$ class uniformly. Let $P_{i,e} = \{X : 0^e 1 X \in P_i\}$. So $X \in \cup_i P_{i,e} \implies \varphi_e^X$ total$\}$ and $\mu(\cup_i P_{i,e}) = \mu\{X : \varphi_e^X $ total $\}$.\\
+   Let $f_{i,e}(n) = max \{\varphi_e^X(n): X \in P_{i,e}\}$ such that $f_{i,e} \leq_TB$ uniformly in $i,e$. \\
+   Let $f(n) = max \{f_{i,e}(n) : i,e \leq n\}$.  Then $f$ witnesses that $B$ is uniformly almost everywhere dominating.$\qed$\\\\
+   Claim: $0'$ is uniformly almost everywhere dominating \\
+   or equivalently every $\Pi^0_2$ class has a $\Sigma^0_2[0']$ subclass of same measure.
+   We'll see the proof next time
    
     \end{document} 

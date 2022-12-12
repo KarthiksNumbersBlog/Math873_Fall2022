@@ -52,3 +52,4 @@
 \contentsline {section}{\numberline {38}Lecture 38}{42}{section.38}%
 \contentsline {section}{\numberline {39}Lecture 39}{43}{section.39}%
 \contentsline {subsection}{\numberline {39.1}(Uniform) Almost Everywhere Domination}{43}{subsection.39.1}%
+\contentsline {section}{\numberline {40}Lecture 40}{44}{section.40}%
