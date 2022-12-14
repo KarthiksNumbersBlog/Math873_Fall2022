@@ -53,3 +53,5 @@
 \contentsline {section}{\numberline {39}Lecture 39}{43}{section.39}%
 \contentsline {subsection}{\numberline {39.1}(Uniform) Almost Everywhere Domination}{43}{subsection.39.1}%
 \contentsline {section}{\numberline {40}Lecture 40}{44}{section.40}%
+\contentsline {section}{\numberline {41}Lecture 41}{45}{section.41}%
+\contentsline {subsection}{\numberline {41.1}Pseudo Jump Inversion (Jockusch-Shore)}{45}{subsection.41.1}%

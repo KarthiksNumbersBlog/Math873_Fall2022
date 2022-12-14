@@ -855,6 +855,35 @@ By the coding theorem $\exists c, \forall n P_M(n) <2^c 2^{-K(n)}$. Let $S_{n,d}
    Let $f(n) = max \{f_{i,e}(n) : i,e \leq n\}$.  Then $f$ witnesses that $B$ is uniformly almost everywhere dominating.$\qed$\\\\
    Claim: $0'$ is uniformly almost everywhere dominating \\
    or equivalently every $\Pi^0_2$ class has a $\Sigma^0_2[0']$ subclass of same measure.
-   We'll see the proof next time
+   We'll see the proof next time.
+   \newpage
+   \section{Lecture 41}
+   \textbf{Theorem:} $B$ is $uaed \iff$ for every $\Pi^0_2$ class $Q$ there is a $\Sigma^0_2[B]$ subclass $S \subset Q$ of the same measure.\\
+   \textbf{Proposition:} $0'$ is $uaed$.\\
+   Proof: (Kurtz 81) Let $S_e(n) = \mu s [\mu(\{X : \varphi_e^X(n)\downarrow\} - \{X: \varphi_{e,s}^X(n)\downarrow\}) \leq 2^{-n}]$. Let $f_e(n) = max \{\varphi_{e,s_e(n)}^X : X \in 2^\omega\}$.\\
+   Note $S_e,f_e \leq_T 0'$
+   Let $U_n = \{X : \varphi_e^X(n)\downarrow$ but $\varphi_{e,S_e(n)}^X(n)\uparrow\}$. So $\mu(U_n) \leq 2^{-n}$  and $\{U_n\}_{n \in \omega}$ is a $0'- ML$ test. If $X$ is $2-$ random then $X \in U_n$ for at most finitely many $n$. Hence $f_e$ dominates $\varphi_e^X$. Let $f(n) = max \{f_e(n): e \leq n\}$.\\
+   \textbf{Corollary}:(Kurtz 81) Every $\Pi^0_2$ class has a $\Sigma^0_2[0']$ subclass of the same measure.\\\\
+   Recall: The following are equivalent for $A,B \in 2^\omega$. \\
+   i) $A \leq_{LR} B$ and $A \leq_T B'$.\\
+   ii) Every $\Sigma^0_2[A]$ class has a $\Sigma^0_2[B]$ subclass of the same measure. \\
+   \textbf{Theorem:} The following are equivalent for $B \in 2^\omega$.\\
+   i) $B$ is uniformly almost everywhere dominating\\
+   ii) $B$ is almost everywhere dominating\\
+   iii) $0' \leq_{LR}B$.\\
+   We have show that $i \implies ii \implies iii$.\\
+   iii $\implies $ i: Since $0' \leq_T B'$ every $\Sigma^0_2[0']$ class has a $\Sigma^0_2[B]$ subclass of the same measure. Take $Q$ to be a $\Pi^0_2$ class. It has a $\Sigma^0_2[0']$ subclass of the same measure which has a $\Sigma^0_2[B]$ subclass of the same measure. So $B$ is uniformly almost everywhere dominating. \\\\
+   We know that $\leq_T 0' \implies uaed \implies high$. None of the converses are true. 
+   \subsection{Pseudo Jump Inversion (Jockusch-Shore)}
+   Let $W$ be a $c.e.$ operator. There is a $c.e.$ set $C$ such that $W^C \oplus C \equiv_T0'$. (We join $C$ to make sure it is weakly increasing).\\
+   Example: Relativize the construction of a low simple set to get $C <_T W^C$ and $(W^C)' \leq_T C'$. Now take $C$ such that $W^C \oplus C \equiv_T W^C \equiv_T0'$.\\
+   Then $C <_T 0'$ and $0'' \equiv_T (W^C)' \leq_TC'$. So $C$ is an incomplete high c.e. set.\\
+   Example: Relativize the construction of a low for random simple set to get a c.e. operator $W$ such that $C <_T W^C$ and $W^C \leq_{LR}C$. \\
+   Then take $C$ such that $W^C \equiv_TW^C \oplus C \equiv_T 0'$. Then $C <_T 0'$ and $0 \leq_{LR} C$. So $C$ is an incomplete $c.e.$ set that is $uaed.$ Therefore $uaed $ does not imply $\geq_T0'$.\\
+   Nies showed that if $W$ is a c.e. operator then there is a $ML$ random $C$ such that $W^C \oplus C \equiv_T0'$. (even $\equiv_{wtt}$).\\
+   Example: There is a $ML$ random $C <_T 0'$ that is uniformly almost everywhere dominating.\\
+   Facts: i) There is an incomplete ML random $C$ that computes all $K$ trivials.\\
+   ii) If $C$ is $ML$ random and computes all $K$ trivials then $C$ is uaed. \\
+   Open Questions: If $C$ is $ML$ random and $uaed$ does $C$ compute all $K$ trivials? 
    
     \end{document} 
